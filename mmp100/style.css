@@ -1,4 +1,17 @@
 body{
   font-family: fantasy;
-  background-color: coral; 
+  background-color: lime green; 
+}
+
+.test{
+  text-decoration: underline;
+}
+
+#content{
+  font-size: 5em;
+}
+
+img{
+  position: relative;
+  left: 200px;
 }
