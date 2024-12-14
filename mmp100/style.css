@@ -1,17 +1,54 @@
-body{
-  background-color: #7FFF00;
-  font-family: fantasy; 
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: white;
+    background-color: black;
 }
 
-.test{
-  text-decoration: underline;
+.container {
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
 }
 
-#content{
-  font-size: 5em;
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
 }
 
-img{
-  position: relative;
-  left: 200px;
+p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
 }
+
+.choices a {
+    display: block;
+    margin: 10px 0;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    transition: background 0.3s, color 0.3s;
+}
+
+.choices a:hover {
+    background: white;
+    color: black;
+}
+
+/* Era-Specific Styles */
+body.prehistoric {
+    background: url('https://via.placeholder.com/1200x800?text=Prehistoric+Background') no-repeat center center;
+    background-size: cover;
+}
+
+body.medieval {
+    background: url('https://via.placeholder.com/1200x800?text=Medieval+Background') no-repeat center center;
+    background-size: cover;
+}
+
