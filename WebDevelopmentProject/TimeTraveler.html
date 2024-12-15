@@ -1,1 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your Time Traveler</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Are you the time traveler everyone speaks of? Who are you?</h1>
+        <div class="options">
+            <a href="TimeMachine.html" class="option" data-choice="traveler1">Just a Mad Scientist</a>
+            <a href="TimeMachine.html" class="option" data-choice="traveler2">Just a Sentient Robot</a>
+            <a href="TimeMachine.html" class="option" data-choice="traveler3">Just a Time Wizard</a>
+            <a href="TimeMachine.html" class="option" data-choice="traveler4">Just Some Random Guy</a>
+        </div>
+    </div>
 
+    <script>
+        // Store the user's selection in localStorage
+        document.querySelectorAll('.option').forEach(option => {
+            option.addEventListener('click', function () {
+                localStorage.setItem('timeTravelerChoice', this.dataset.choice);
+            });
+        });
+    </script>
+</body>
+</html>
