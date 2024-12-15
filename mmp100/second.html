@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Image Position</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Image Test</h1>
+        <div id="image-display"></div>
+    </div>
+
+    <script>
+        // Retrieve the selected image from localStorage
+        const selectedImage = localStorage.getItem('selectedImage');
+        if (selectedImage) {
+            const imageContainer = document.getElementById('image-display');
+            const img = document.createElement('img');
+            img.src = selectedImage; // Load the selected image
+            img.alt = 'Selected Option Image';
+            img.className = 'test-image';
+            imageContainer.appendChild(img); // Add the image to the page
+        } else {
+            // Redirect to index.html if no image is selected
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>
