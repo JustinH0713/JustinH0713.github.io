@@ -5,18 +5,17 @@
     box-sizing: border-box;
 }
 
-/* Shared Body Styling for All Pages */
+/* Shared Body Styling */
 body {
     font-family: Arial, sans-serif;
-    height: 100vh; /* Full viewport height */
-    display: flex; /* Allows centering of content */
-    justify-content: center; /* Centers content horizontally */
-    align-items: center; /* Centers content vertically */
-    text-align: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 0;
 }
 
-/* Index Page Styles */
+/* Index Page Specific Styling */
 body.index-page {
     background-image: url('Images/StartpageBackground.jpg');
     background-size: cover; /* Ensures the background fills the entire page */
@@ -25,28 +24,38 @@ body.index-page {
     color: white;
 }
 
-/* Title and Start Button Styles for Index Page */
-.container h1 {
-    font-size: 3em;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 5px #ff6600;
+/* Centered Container with Semi-Transparent Background */
+.container {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    padding: 40px 60px;
+    border-radius: 15px; /* Smooth rounded edges */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Strong shadow for depth */
+    text-align: center;
 }
 
+/* Title Styling */
+.container h1 {
+    font-size: 4em; /* Bigger title */
+    margin-bottom: 30px;
+    text-shadow: 3px 3px 6px #ff6600; /* Glowing text effect */
+}
+
+/* Start Button Styling */
 .start-button {
     display: inline-block;
-    padding: 15px 30px;
-    font-size: 1.2em;
+    padding: 20px 40px; /* Bigger button */
+    font-size: 1.5em; /* Larger text */
     color: white;
     text-decoration: none;
-    background-color: #ff6600;
-    border-radius: 5px;
-    transition: all 0.2s ease;
+    background-color: #ff6600; /* Vibrant orange */
+    border-radius: 8px;
+    transition: all 0.3s ease; /* Smooth hover effect */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 .start-button:hover {
     background-color: #e65c00;
-    transform: scale(1.1);
+    transform: scale(1.1); /* Slight enlargement on hover */
 }
 
 /* TimeTraveler Page Styles */
