@@ -1,23 +1,58 @@
-body.index-page {
-    background-image: url('Images/StartpageBackground.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-body {
-/* Shared Styles */
-body {
+/* General Reset */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+/* Shared Body Styling for All Pages */
+body {
     font-family: Arial, sans-serif;
+    height: 100vh; /* Full viewport height */
+    display: flex; /* Allows centering of content */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    text-align: center;
+    margin: 0;
+}
+
+/* Index Page Styles */
+body.index-page {
+    background-image: url('Images/StartpageBackground.jpg');
+    background-size: cover; /* Ensures the background fills the entire page */
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+/* Title and Start Button Styles for Index Page */
+.container h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px #ff6600;
+}
+
+.start-button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    color: white;
+    text-decoration: none;
+    background-color: #ff6600;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.start-button:hover {
+    background-color: #e65c00;
+    transform: scale(1.1);
+}
+
+/* TimeTraveler Page Styles */
+body.time-traveler-page {
     background-color: #1a1a1a; /* Dark background */
     color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Full viewport height */
-    text-align: center;
 }
 
 .container h1 {
@@ -52,7 +87,7 @@ body {
     background-color: #e65c00;
 }
 
-/* Time Machine Page Styles */
+/* TimeMachine Page Styles */
 #background-container {
     position: relative;
     width: 100%;
