@@ -3,18 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Time Traveler's Journey</title>
+    <title>Select Your Time Traveler</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to the Time Traveler's Journey</h1>
-        <p>Choose an era to explore:</p>
+        <h1>Select Your Time Traveler</h1>
+        <p>Choose who you will be on your journey:</p>
         <div class="choices">
-            <a href="prehistoric.html">Prehistoric Era</a>
-            <a href="medieval.html">Medieval Era</a>
-            <a href="future.html">Futuristic Era</a>
+            <!-- Each image has a data attribute representing the traveler type -->
+            <img src="traveler1.jpg" alt="Time Traveler 1" class="traveler" data-traveler="traveler1">
+            <img src="traveler2.jpg" alt="Time Traveler 2" class="traveler" data-traveler="traveler2">
+            <img src="traveler3.jpg" alt="Time Traveler 3" class="traveler" data-traveler="traveler3">
+            <img src="traveler4.jpg" alt="Time Traveler 4" class="traveler" data-traveler="traveler4">
         </div>
+        <p>Once you select, your journey will begin!</p>
     </div>
+
+    <script>
+        // Add event listeners to all images
+        document.querySelectorAll('.traveler').forEach(image => {
+            image.addEventListener('click', function() {
+                // Save the selected traveler type in localStorage
+                localStorage.setItem('selectedTraveler', this.dataset.traveler);
+                // Redirect to the first era page
+                window.location.href = 'prehistoric.html';
+            });
+        });
+    </script>
 </body>
 </html>
