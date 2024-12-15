@@ -1,1 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Adventure Begins</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="background-container">
+        <div id="content">
+            <h1>Welcome, Time Traveler!</h1>
+            <p>Your journey starts now...</p>
+            <img src="" id="timeTravelerImage" alt="Your Time Traveler">
+        </div>
+    </div>
 
+    <script>
+        // Get the choice from localStorage
+        const choice = localStorage.getItem('timeTravelerChoice');
+
+        // Map choices to images and backgrounds
+        const backgrounds = {
+            traveler1: 'Images/TimeTravelers/Backgrounds/BG1.jpg',
+            traveler2: 'Images/TimeTravelers/Backgrounds/BG2.jpg',
+            traveler3: 'Images/TimeTravelers/Backgrounds/BG3.jpg',
+            traveler4: 'Images/TimeTravelers/Backgrounds/BG4.jpg'
+        };
+
+        const travelerImages = {
+            traveler1: 'Images/TimeTravelers/traveler1.png',
+            traveler2: 'Images/TimeTravelers/traveler2.png',
+            traveler3: 'Images/TimeTravelers/traveler3.png',
+            traveler4: 'Images/TimeTravelers/traveler4.png'
+        };
+
+        // Set the background image and traveler image dynamically
+        if (choice) {
+            document.getElementById('background-container').style.backgroundImage = `url(${backgrounds[choice]})`;
+            document.getElementById('timeTravelerImage').src = travelerImages[choice];
+        } else {
+            window.location.href = 'TimeTraveler.html'; // Redirect if no choice is made
+        }
+    </script>
+</body>
+</html>
