@@ -1,17 +1,16 @@
-/* General Styles */
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
     text-align: center;
-    color: white;
-    background-color: black;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
 .container {
+    max-width: 800px;
+    margin: 50px auto;
     padding: 20px;
-    max-width: 600px;
-    margin: auto;
 }
 
 h1 {
@@ -19,50 +18,34 @@ h1 {
     margin-bottom: 20px;
 }
 
-p {
-    font-size: 1.2em;
-    margin-bottom: 20px;
+.options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Create a 2x2 grid */
+    gap: 20px;
 }
 
-.choices a {
-    display: block;
-    margin: 10px 0;
-    padding: 10px 15px;
-    text-decoration: none;
+.option {
+    background-color: #007BFF;
     color: white;
-    border: 2px solid white;
-    border-radius: 5px;
-    background: rgba(255, 255, 255, 0.1);
-    transition: background 0.3s, color 0.3s;
+    padding: 50px;
+    font-size: 1.5em;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
 }
 
-.choices a:hover {
-    background: white;
-    color: black;
+.option:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
 }
 
-/* Era-Specific Styles */
-body.prehistoric {
-    background: url('https://via.placeholder.com/1200x800?text=Prehistoric+Background') no-repeat center center;
-    background-size: cover;
+#image-display {
+    margin-top: 50px;
 }
 
-body.medieval {
-    background: url('https://via.placeholder.com/1200x800?text=Medieval+Background') no-repeat center center;
-    background-size: cover;
-}
-
-#traveler-display {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000; /* Ensures it stays on top of other elements */
-}
-
-.traveler-image {
-    width: 150px;
+.test-image {
+    width: 300px; /* Adjust size as needed */
     height: auto;
-    border: 2px solid white;
+    border: 2px solid #333;
     border-radius: 10px;
 }
-
