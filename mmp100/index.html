@@ -10,7 +10,6 @@
     <div class="container">
         <h1>Choose one of the four options</h1>
         <div class="options">
-            <!-- Each div represents an option -->
             <div class="option" data-image="option1.jpg">Option 1</div>
             <div class="option" data-image="option2.jpg">Option 2</div>
             <div class="option" data-image="option3.jpg">Option 3</div>
@@ -19,15 +18,11 @@
     </div>
 
     <script>
-        // Add click events to each option
         document.querySelectorAll('.option').forEach(option => {
             option.addEventListener('click', function () {
-                // Store the attached image for the selected option in localStorage
                 const selectedImage = this.dataset.image;
                 localStorage.setItem('selectedImage', selectedImage);
-
-                // Redirect to the second page
-                window.location.href = 'second.html';
+                window.location.href = './second.html'; // Updated for GitHub Pages
             });
         });
     </script>
