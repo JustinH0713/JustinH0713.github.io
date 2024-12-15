@@ -16,5 +16,16 @@
             <a href="future.html">Travel to the Future</a>
         </div>
     </div>
+    <div id="traveler-display"></div>
+
+    <script>
+        const selectedTraveler = localStorage.getItem('selectedTraveler');
+        if (selectedTraveler) {
+            const travelerContainer = document.getElementById('traveler-display');
+            travelerContainer.innerHTML = `<img src="${selectedTraveler}.jpg" alt="${selectedTraveler}" class="traveler-image">`;
+        } else {
+            window.location.href = 'index.html';
+        }
+    </script>
 </body>
 </html>
