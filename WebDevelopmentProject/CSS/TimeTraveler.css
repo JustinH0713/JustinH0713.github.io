@@ -1,1 +1,33 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your Time Traveler</title>
+    <link rel="stylesheet" href="CSS/TimeTraveler.css">
+</head>
+<body class="time-traveler-page">
+    <div class="container">
+        <h1>Are you the Time Traveler everyone speaks of? Who are you?</h1>
+        <div class="options">
+            <a href="TimeMachine.html" class="option" data-traveler="traveler1">
+                <img src="Images/TimeTravelers/traveler1.jpg" alt="Just a Mad Scientist">
+                Just a Mad Scientist
+            </a>
+            <a href="TimeMachine.html" class="option" data-traveler="traveler2">
+                <img src="Images/TimeTravelers/traveler2.jpg" alt="Just a Sentient Robot">
+                Just a Sentient Robot
+            </a>
+            <a href="TimeMachine.html" class="option" data-traveler="traveler3">
+                <img src="Images/TimeTravelers/traveler3.jpg" alt="Just a Time Wizard">
+                Just a Time Wizard
+            </a>
+            <a href="TimeMachine.html" class="option" data-traveler="traveler4">
+                <img src="Images/TimeTravelers/traveler4.jpg" alt="Just Some Random Guy">
+                Just Some Random Guy
+            </a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
