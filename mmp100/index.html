@@ -10,19 +10,20 @@
     <div class="container">
         <h1>Choose one of the four options</h1>
         <div class="options">
-            <div class="option" data-image="option1.jpg">Option 1</div>
-            <div class="option" data-image="option2.jpg">Option 2</div>
-            <div class="option" data-image="option3.jpg">Option 3</div>
-            <div class="option" data-image="option4.jpg">Option 4</div>
+            <!-- Each option uses an <a> tag to link to second.html -->
+            <a href="second.html" class="option" data-image="option1.jpg">Option 1</a>
+            <a href="second.html" class="option" data-image="option2.jpg">Option 2</a>
+            <a href="second.html" class="option" data-image="option3.jpg">Option 3</a>
+            <a href="second.html" class="option" data-image="option4.jpg">Option 4</a>
         </div>
     </div>
 
     <script>
+        // Add click event to each option to store the selected image
         document.querySelectorAll('.option').forEach(option => {
-            option.addEventListener('click', function () {
+            option.addEventListener('click', function (event) {
                 const selectedImage = this.dataset.image;
                 localStorage.setItem('selectedImage', selectedImage);
-                window.location.href = './second.html'; // Updated for GitHub Pages
             });
         });
     </script>
