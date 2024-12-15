@@ -1,1 +1,55 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body.index-page {
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    background-image: url('../Images/StartpageBackground.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+/* Container Styling */
+.container {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 40px 60px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* Title Styling */
+.container h1 {
+    font-size: 4em;
+    margin-bottom: 30px;
+    text-shadow: 3px 3px 6px #ff6600;
+}
+
+/* Start Button Styling */
+.start-button {
+    display: inline-block;
+    padding: 20px 40px;
+    font-size: 1.5em;
+    color: white;
+    text-decoration: none;
+    background-color: #ff6600;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+}
+
+.start-button:hover {
+    background-color: #e65c00;
+    transform: scale(1.1);
+}
 
