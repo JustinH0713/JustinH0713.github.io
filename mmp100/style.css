@@ -49,6 +49,7 @@ h1 {
 .test-image {
     width: 300px;
     height: auto;
-    border: 2px solid #333;
-    border-radius: 10px;
+    /* Removed border-related properties */
+    border: none;
+    border-radius: 0;
 }
