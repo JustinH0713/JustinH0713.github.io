@@ -52,3 +52,17 @@ body.medieval {
     background-size: cover;
 }
 
+#traveler-display {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000; /* Ensures it stays on top of other elements */
+}
+
+.traveler-image {
+    width: 150px;
+    height: auto;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
