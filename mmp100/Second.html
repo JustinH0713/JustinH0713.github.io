@@ -13,19 +13,16 @@
     </div>
 
     <script>
-        // Get the selected image from localStorage
         const selectedImage = localStorage.getItem('selectedImage');
-
         if (selectedImage) {
             const imageContainer = document.getElementById('image-display');
             const img = document.createElement('img');
-            img.src = selectedImage; // Load the image
+            img.src = selectedImage;
             img.alt = 'Selected Option Image';
             img.className = 'test-image';
-            imageContainer.appendChild(img); // Add the image to the page
+            imageContainer.appendChild(img);
         } else {
-            // If no image is selected, redirect back to the first page
-            window.location.href = 'index.html';
+            window.location.href = './index.html'; // Updated for GitHub Pages
         }
     </script>
 </body>
