@@ -27,10 +27,13 @@ h1 {
 .option {
     background-color: #007BFF;
     color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 50px;
     font-size: 1.5em;
     border-radius: 10px;
-    cursor: pointer;
     transition: transform 0.3s, background-color 0.3s;
 }
 
@@ -44,7 +47,7 @@ h1 {
 }
 
 .test-image {
-    width: 300px; /* Adjust size as needed */
+    width: 300px;
     height: auto;
     border: 2px solid #333;
     border-radius: 10px;
