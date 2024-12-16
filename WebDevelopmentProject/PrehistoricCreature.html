@@ -1,1 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prehistoric Creatures</title>
+    <link rel="stylesheet" href="CSS/PrehistoricCreature.css"> <!-- Link to a separate CSS for this page -->
+</head>
+<body>
+    <div class="background"></div> <!-- Background image -->
+    <div class="border-container">
+        <div class="time-traveler" id="traveler-container">
+            <img id="travelerImage" src="" alt="Time Traveler">
+        </div>
+        <div class="time-machine" id="time-machine-container">
+            <img id="timeMachineImage" src="" alt="Time Machine">
+        </div>
+        <div class="text-container">
+            <p id="large-text"></p> <!-- Large text displayed across the screen -->
 
+            <div class="buttons">
+                <button onclick="location.href='NextPage.html'">Learn About Prehistoric Creatures</button>
+                <button onclick="location.href='NextPage.html'">How to Survive the Prehistoric Era</button>
+                <button onclick="location.href='NextPage.html'">What Will We Discover?</button>
+                <button onclick="location.href='NextPage.html'">Can We Change the Past?</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Get the selected traveler and purpose from localStorage
+        const traveler = localStorage.getItem('selectedTraveler');
+        const purpose = localStorage.getItem('selectedPurpose'); // Purpose from purposes page
+        const travelerImage = document.getElementById('travelerImage');
+        const travelerContainer = document.getElementById('traveler-container');
+        const timeMachineImage = document.getElementById('timeMachineImage');
+        const timeMachineContainer = document.getElementById('time-machine-container');
+        const largeTextElement = document.getElementById('large-text');
+
+        // Set the traveler image and background based on selected traveler
+        if (traveler) {
+            travelerImage.src = `Images/TimeTravelers/${traveler}.png`;
+            const background = document.querySelector('.background');
+            background.style.backgroundImage = `url('Images/TimeTravelers/Backgrounds/${traveler}.jpg')`;
+
+            // Set the position of the traveler based on the selection
+            switch (traveler) {
+                case 'Option (1)':
+                    travelerContainer.style.top = '80%';
+                    travelerContainer.style.left = '50%';
+                    break;
+                case 'Option (2)':
+                    travelerContainer.style.top = '30%';
+                    travelerContainer.style.left = '60%';
+                    break;
+                case 'Option (3)':
+                    travelerContainer.style.top = '40%';
+                    travelerContainer.style.left = '20%';
+                    break;
+                case 'Option (4)':
+                    travelerContainer.style.top = '50%';
+                    travelerContainer.style.left = '50%';
+                    break;
+                default:
+                    travelerContainer.style.top = '50%';
+                    travelerContainer.style.left = '50%';
+            }
+
+            // Position the time machine based on the selected traveler
+            switch (traveler) {
+                case 'Option (1)':
+                    timeMachineContainer.style.bottom = '10%';
+                    timeMachineContainer.style.left = '10%'; // Adjust left as needed for Option 1
+                    break;
+                case 'Option (2)':
+                    timeMachineContainer.style.bottom = '10%';
+                    timeMachineContainer.style.left = '40%'; // Adjust left as needed for Option 2
+                    break;
+                case 'Option (3)':
+                    timeMachineContainer.style.bottom = '10%';
+                    timeMachineContainer.style.left = '70%'; // Adjust left as needed for Option 3
+                    break;
+                case 'Option (4)':
+                    timeMachineContainer.style.bottom = '10%';
+                    timeMachineContainer.style.left = '50%'; // Center horizontally for Option 4
+                    timeMachineContainer.style.transform = 'translateX(-50%)';
+                    break;
+                default:
+                    timeMachineContainer.style.bottom = '10%';
+                    timeMachineContainer.style.left = '50%'; // Center horizontally by default
+                    timeMachineContainer.style.transform = 'translateX(-50%)';
+            }
+        }
+
+        // Set the time machine image based on the selected option (you can keep the same)
+        const timeMachineOption = localStorage.getItem('selectedOption');
+        if (timeMachineOption) {
+            timeMachineImage.src = `Images/TimeMachines/${timeMachineOption}.png`;
+        }
+
+        // Display large text based on the selected purpose
+        if (purpose) {
+            switch (purpose) {
+                case 'World Domination':
+                    largeTextElement.textContent = "WORLD DOMINATION!";
+                    break;
+                case 'Just Bored':
+                    largeTextElement.textContent = "JUST BORED...";
+                    break;
+                case 'New Friends':
+                    largeTextElement.textContent = "MAKING NEW FRIENDS!";
+                    break;
+                case 'Societal Benefit':
+                    largeTextElement.textContent = "SOCIETAL BENEFIT!";
+                    break;
+                default:
+                    largeTextElement.textContent = "MYSTERIOUS PURPOSE!";
+            }
+        }
+    </script>
+</body>
+</html>
