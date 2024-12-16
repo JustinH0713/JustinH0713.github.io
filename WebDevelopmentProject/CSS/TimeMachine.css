@@ -9,9 +9,8 @@
 body {
     font-family: Arial, sans-serif;
     height: 100vh;
+    background: url('../Images/TimeTravelers/Backgrounds/your-background-image.jpg') no-repeat center center;
     background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     color: white;
     display: flex;
     justify-content: center;
@@ -22,32 +21,59 @@ body {
 /* Container Styling */
 .container {
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.7);
     padding: 30px 50px;
     border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
 }
 
 .container h1 {
-    font-size: 3em;
-    margin-bottom: 20px;
+    font-size: 2.5em;
+    margin-bottom: 10px;
     text-shadow: 2px 2px 5px #ff6600;
 }
 
 .container p {
-    font-size: 1.5em;
+    font-size: 1.2em;
+    margin-bottom: 20px;
 }
 
-/* Time Traveler Image Styling */
-.time-traveler {
-    margin-top: 30px;
-    text-align: center;
+/* Options Styling */
+.options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
 }
 
-.time-traveler img {
-    max-width: 300px;
-    height: auto;
+.option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
-    position: relative; /* You can adjust this for custom positioning */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.option:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+}
+
+.option img {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+.option span {
+    font-size: 1.2em;
+    text-shadow: 1px 1px 3px black;
 }
