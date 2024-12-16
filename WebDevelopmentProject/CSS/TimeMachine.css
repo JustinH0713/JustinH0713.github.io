@@ -55,6 +55,6 @@ body {
 .traveler img {
     max-width: 80%; /* Scale image to fit within the page */
     height: auto;
-    border: none;
+    border: none; /* Removes the border */
     border-radius: 8px; /* Rounded corners */
 }
