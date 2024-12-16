@@ -7,24 +7,47 @@
     <link rel="stylesheet" href="CSS/TimeMachine.css">
 </head>
 <body>
-    <div class="background"></div>
+    <div class="background" id="background"></div>
     <div class="container">
-        <h1>Welcome to the Time Machine</h1>
-        <p>Choose your time traveler to embark on your adventure!</p>
-        <div class="options">
-            <a href="#" class="option">
-                <img src="Images/TimeTravelers/Option (1).png" alt="Just a Mad Scientist">
-            </a>
-            <a href="#" class="option">
-                <img src="Images/TimeTravelers/Option (2).png" alt="Just a Sentient Robot">
-            </a>
-            <a href="#" class="option">
-                <img src="Images/TimeTravelers/Option (3).png" alt="Just a Time Wizard">
-            </a>
-            <a href="#" class="option">
-                <img src="Images/TimeTravelers/Option (4).png" alt="Just Some Random Guy">
-            </a>
+        <div class="traveler">
+            <img id="travelerImage" src="" alt="Time Traveler">
         </div>
     </div>
+
+    <script>
+        // Set the traveler image and background based on the selection
+        const urlParams = new URLSearchParams(window.location.search);
+        const traveler = urlParams.get('traveler');
+
+        // Set the background and traveler image based on the selected traveler
+        let backgroundImage = '';
+        let travelerImage = '';
+
+        switch(traveler) {
+            case '1':
+                backgroundImage = 'Images/TimeTravelers/Backgrounds/BG (1).jpg';
+                travelerImage = 'Images/TimeTravelers/Option (1).png';
+                break;
+            case '2':
+                backgroundImage = 'Images/TimeTravelers/Backgrounds/BG (2).jpg';
+                travelerImage = 'Images/TimeTravelers/Option (2).png';
+                break;
+            case '3':
+                backgroundImage = 'Images/TimeTravelers/Backgrounds/BG (3).jpg';
+                travelerImage = 'Images/TimeTravelers/Option (3).png';
+                break;
+            case '4':
+                backgroundImage = 'Images/TimeTravelers/Backgrounds/BG (4).jpg';
+                travelerImage = 'Images/TimeTravelers/Option (4).png';
+                break;
+            default:
+                backgroundImage = 'Images/TimeTravelers/Backgrounds/BG (1).jpg';
+                travelerImage = 'Images/TimeTravelers/Option (1).png';
+        }
+
+        // Update the background and traveler image dynamically
+        document.getElementById('background').style.backgroundImage = `url(${backgroundImage})`;
+        document.getElementById('travelerImage').src = travelerImage;
+    </script>
 </body>
 </html>
