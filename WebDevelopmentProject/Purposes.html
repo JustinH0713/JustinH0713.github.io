@@ -27,7 +27,7 @@
     </div>
 
     <script>
-        // Get the selected traveler and time machine option from localStorage
+        // Get the selected traveler from localStorage
         const traveler = localStorage.getItem('selectedTraveler');
         const timeMachineOption = localStorage.getItem('selectedOption');
         const travelerImage = document.getElementById('travelerImage');
@@ -63,36 +63,36 @@
                     travelerContainer.style.top = '50%';
                     travelerContainer.style.left = '50%';
             }
-        }
 
-        // Set the time machine image based on the selected option
-        if (timeMachineOption) {
-            timeMachineImage.src = `Images/TimeMachines/${timeMachineOption}.png`;
-
-            // Set the position of the time machine based on the selected option (lower on the page)
-            switch (timeMachineOption) {
+            // Position the time machine based on the selected traveler
+            switch (traveler) {
                 case 'Option (1)':
                     timeMachineContainer.style.bottom = '10%';
-                    timeMachineContainer.style.left = '10%'; // Adjust left as needed
+                    timeMachineContainer.style.left = '10%'; // Adjust left as needed for Option 1
                     break;
                 case 'Option (2)':
                     timeMachineContainer.style.bottom = '10%';
-                    timeMachineContainer.style.left = '40%'; // Adjust left as needed
+                    timeMachineContainer.style.left = '40%'; // Adjust left as needed for Option 2
                     break;
                 case 'Option (3)':
                     timeMachineContainer.style.bottom = '10%';
-                    timeMachineContainer.style.left = '70%'; // Adjust left as needed
+                    timeMachineContainer.style.left = '70%'; // Adjust left as needed for Option 3
                     break;
                 case 'Option (4)':
                     timeMachineContainer.style.bottom = '10%';
-                    timeMachineContainer.style.left = '50%'; // Center horizontally
-                    timeMachineContainer.style.transform = 'translateX(-50%)'; // Precise centering
+                    timeMachineContainer.style.left = '50%'; // Center horizontally for Option 4
+                    timeMachineContainer.style.transform = 'translateX(-50%)';
                     break;
                 default:
                     timeMachineContainer.style.bottom = '10%';
                     timeMachineContainer.style.left = '50%'; // Center horizontally by default
                     timeMachineContainer.style.transform = 'translateX(-50%)';
             }
+        }
+
+        // Set the time machine image based on the selected option (you can keep the same)
+        if (timeMachineOption) {
+            timeMachineImage.src = `Images/TimeMachines/${timeMachineOption}.png`;
         }
     </script>
 </body>
