@@ -3,43 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Adventure Begins</title>
+    <title>Your Time Machine</title>
     <link rel="stylesheet" href="CSS/TimeMachine.css">
 </head>
 <body>
-    <div id="background-container">
-        <div id="content">
-            <h1>Welcome, Time Traveler!</h1>
-            <p>Your journey starts now...</p>
-            <img src="" id="timeTravelerImage" alt="Your Time Traveler">
+    <div class="container">
+        <h1>Welcome to Your Time Machine</h1>
+        <p>The adventure begins here! Your chosen traveler is ready to explore.</p>
+        <div class="time-traveler">
+            <!-- The selected traveler's image will be dynamically inserted here -->
+            <img id="traveler-image" alt="Your Time Traveler">
         </div>
     </div>
 
     <script>
-        // Get the choice from localStorage
-        const choice = localStorage.getItem('timeTravelerChoice');
+        // Retrieve the selected traveler's ID from localStorage
+        const traveler = localStorage.getItem('selectedTraveler');
 
-        // Map choices to images and backgrounds
-        const backgrounds = {
-            traveler1: 'Images/TimeTravelers/Backgrounds/BG1.jpg',
-            traveler2: 'Images/TimeTravelers/Backgrounds/BG2.jpg',
-            traveler3: 'Images/TimeTravelers/Backgrounds/BG3.jpg',
-            traveler4: 'Images/TimeTravelers/Backgrounds/BG4.jpg'
+        // Define the mapping for traveler backgrounds and images
+        const travelerData = {
+            traveler1: {
+                background: 'Images/TimeTravelers/Backgrounds/BG1.jpg',
+                image: 'Images/TimeTravelers/traveler1.jpg'
+            },
+            traveler2: {
+                background: 'Images/TimeTravelers/Backgrounds/BG2.jpg',
+                image: 'Images/TimeTravelers/traveler2.jpg'
+            },
+            traveler3: {
+                background: 'Images/TimeTravelers/Backgrounds/BG3.jpg',
+                image: 'Images/TimeTravelers/traveler3.jpg'
+            },
+            traveler4: {
+                background: 'Images/TimeTravelers/Backgrounds/BG4.jpg',
+                image: 'Images/TimeTravelers/traveler4.jpg'
+            }
         };
 
-        const travelerImages = {
-            traveler1: 'Images/TimeTravelers/traveler1.png',
-            traveler2: 'Images/TimeTravelers/traveler2.png',
-            traveler3: 'Images/TimeTravelers/traveler3.png',
-            traveler4: 'Images/TimeTravelers/traveler4.png'
-        };
+        // Apply the background and time traveler image if a valid selection exists
+        if (traveler && travelerData[traveler]) {
+            // Set the page background
+            document.body.style.backgroundImage = `url(${travelerData[traveler].background})`;
 
-        // Set the background image and traveler image dynamically
-        if (choice) {
-            document.getElementById('background-container').style.backgroundImage = `url(${backgrounds[choice]})`;
-            document.getElementById('timeTravelerImage').src = travelerImages[choice];
+            // Set the time traveler image
+            const travelerImg = document.getElementById('traveler-image');
+            travelerImg.src = travelerData[traveler].image;
         } else {
-            window.location.href = 'TimeTraveler.html'; // Redirect if no choice is made
+            // If no valid traveler is selected, display a default message or redirect
+            document.querySelector('.container').innerHTML = `<h1>No Time Traveler Selected!</h1><p>Please go back and choose your traveler.</p>`;
         }
     </script>
 </body>
