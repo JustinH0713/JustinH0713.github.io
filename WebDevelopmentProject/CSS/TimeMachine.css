@@ -1,60 +1,35 @@
-/* General Reset */
-* {
+/* Apply a full viewport height to the background */
+body, html {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-/* Body Styling */
-body {
-    font-family: Arial, sans-serif;
-    height: 100vh;
-    background: none; /* Background will be added via .background */
-    color: white;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    position: relative;
-    overflow: hidden;
+    background-color: #000; /* Default background color if no image is set */
 }
 
-/* Background Styling (Dynamic background based on traveler choice) */
+/* Full-screen background styling */
 .background {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
     background-size: cover;
     background-position: center;
-    z-index: -1;
-    filter: brightness(0.7);
-}
-
-/* Container Styling */
-.container {
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.7); /* Slight opacity */
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-    max-width: 80%;
-    z-index: 1;
-}
-
-/* Traveler Image Styling */
-.traveler {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100%;
 }
 
-.traveler img {
-    max-width: 80%; /* Scale image to fit within the page */
+/* Styling for the time traveler container */
+.time-traveler-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style for the time traveler image */
+#travelerImage {
+    max-width: 80%; /* Ensure the image is responsive and doesn't overflow */
     height: auto;
-    border: none; /* Removes the border */
-    border-radius: 8px; /* Rounded corners */
+    border-radius: 10px; /* Optional: rounds the corners of the image */
 }
