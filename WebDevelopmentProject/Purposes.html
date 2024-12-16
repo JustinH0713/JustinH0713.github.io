@@ -1,1 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purposes</title>
+    <link rel="stylesheet" href="CSS/TimeMachine.css">
+</head>
+<body>
+    <div class="background"></div>
+    <div class="border-container">
+        <div class="time-machine" id="machine-container">
+            <img id="machineImage" src="" alt="Time Machine">
+        </div>
+        <div class="text-container">
+            <p>What do you plan to do with the time machine?</p>
+            <div class="buttons">
+                <button>Option 1</button>
+                <button>Option 2</button>
+                <button>Option 3</button>
+                <button>Option 4</button>
+            </div>
+        </div>
+    </div>
 
+    <script>
+        const timeMachine = localStorage.getItem('selectedTraveler');
+        const machineImage = document.getElementById('machineImage');
+        const machineContainer = document.getElementById('machine-container');
+
+        // Set time machine image and background based on the selected traveler
+        if (timeMachine) {
+            machineImage.src = `Images/TimeMachines/${timeMachine}.png`;
+            const background = document.querySelector('.background');
+            background.style.backgroundImage = `url('Images/TimeMachines/Backgrounds/${timeMachine}.jpg')`;
+
+            // Preserves time machine positioning similar to the traveler
+            switch (timeMachine) {
+                case 'Option (1)':
+                    machineContainer.style.top = '80%';
+                    machineContainer.style.left = '50%';
+                    break;
+                case 'Option (2)':
+                    machineContainer.style.top = '30%';
+                    machineContainer.style.left = '60%';
+                    break;
+                case 'Option (3)':
+                    machineContainer.style.top = '40%';
+                    machineContainer.style.left = '20%';
+                    break;
+                case 'Option (4)':
+                    machineContainer.style.top = '50%';
+                    machineContainer.style.left = '50%';
+                    break;
+                default:
+                    machineContainer.style.top = '50%';
+                    machineContainer.style.left = '50%';
+            }
+        }
+    </script>
+</body>
+</html>
