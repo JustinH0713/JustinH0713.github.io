@@ -1,0 +1,133 @@
+/* General Reset for consistent styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: white;
+}
+
+/* Background setup */
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+/* Container holding the traveler and machine */
+.border-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Time Traveler Setup */
+.time-traveler {
+    position: absolute;
+    z-index: 2;
+}
+
+#travelerImage {
+    width: 100px;  /* Adjust size as needed */
+    height: auto;
+}
+
+/* Time Machine Setup */
+.time-machine {
+    position: absolute;
+    z-index: 1;
+}
+
+#timeMachineImage {
+    width: 150px;  /* Adjust size as needed */
+    height: auto;
+}
+
+/* Text container styling */
+.text-container {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    margin-top: 20px;
+    max-width: 80%;
+}
+
+/* Large text in the middle */
+#large-text {
+    font-size: 4rem;  /* Adjust size as needed */
+    color: white;
+    text-align: center;
+    position: absolute;
+    top: 30%; /* Adjust vertical position */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;  /* Ensure text is above other elements */
+}
+
+/* Styling for the buttons */
+.buttons {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.buttons button {
+    background-color: #1a1a1a;
+    color: white;
+    border: 2px solid #fff;
+    padding: 15px 25px;
+    font-size: 1.2rem;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.buttons button:hover {
+    background-color: #ff6347;
+}
+
+/* Responsive design for buttons */
+@media (max-width: 768px) {
+    .buttons button {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+/* Custom Styling for the Traveler and Time Machine based on traveler options */
+#traveler-container {
+    position: absolute;
+}
+
+#time-machine-container {
+    position: absolute;
+    bottom: 10%;
+    transform: translateX(-50%);
+}
+
+/* Optional styles for the borders and other elements */
+.border-container {
+    padding: 20px;
+    border: 5px solid #fff;
+    border-radius: 10px;
+}
+
+/* Add shadow to text and buttons to make them more visible */
+#large-text, .buttons button {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
