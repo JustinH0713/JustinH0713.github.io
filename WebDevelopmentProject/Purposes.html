@@ -16,12 +16,12 @@
             <img id="timeMachineImage" src="" alt="Time Machine">
         </div>
         <div class="text-container">
-            <p>What is the purpose of your time machine?</p>
+            <p>What is your purpose in all this?</p>
             <div class="buttons">
-                <button onclick="location.href='NextPage.html'">Find out more about its purpose</button>
-                <button onclick="location.href='NextPage.html'">What adventures await?</button>
-                <button onclick="location.href='NextPage.html'">Can it change history?</button>
-                <button onclick="location.href='NextPage.html'">What does the future hold?</button>
+                <button onclick="saveChoice('World Domination'); location.href='PrehistoricCreature.html'">World Domination</button>
+                <button onclick="saveChoice('Just Bored'); location.href='PrehistoricCreature.html'">Just Bored</button>
+                <button onclick="saveChoice('New Friends'); location.href='PrehistoricCreature.html'">New Friends</button>
+                <button onclick="saveChoice('Societal Benefit'); location.href='PrehistoricCreature.html'">Societal Benefit</button>
             </div>
         </div>
     </div>
@@ -93,6 +93,11 @@
         // Set the time machine image based on the selected option (you can keep the same)
         if (timeMachineOption) {
             timeMachineImage.src = `Images/TimeMachines/${timeMachineOption}.png`;
+        }
+
+        // Save the selected choice to localStorage
+        function saveChoice(choice) {
+            localStorage.setItem('selectedPurpose', choice);
         }
     </script>
 </body>
