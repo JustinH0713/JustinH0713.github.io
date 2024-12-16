@@ -3,72 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Time Machine Adventure</title>
+    <title>Time Traveler</title>
     <link rel="stylesheet" href="CSS/TimeMachine.css">
 </head>
 <body>
-    <div class="content">
-        <!-- Container for the background and text -->
-        <div class="background-container">
-            <div class="background">
-                <div class="time-traveler-container">
-                    <img id="travelerImage" src="" alt="Selected Time Traveler" class="traveler">
-                </div>
-            </div>
+    <div class="background"></div>
+    <div class="border-container">
+        <div class="time-traveler" id="traveler-container">
+            <img id="travelerImage" src="" alt="Time Traveler">
         </div>
-
-        <!-- Text and buttons -->
         <div class="text-container">
-            <p>"Is it true what we've heard about your time machine?"</p>
-            <div class="buttons-container">
-                <button class="action-button">Button 1</button>
-                <button class="action-button">Button 2</button>
-                <button class="action-button">Button 3</button>
-                <button class="action-button">Button 4</button>
+            <p>Is it true what we've heard about your time machine?</p>
+            <div class="buttons">
+                <button>Option 1</button>
+                <button>Option 2</button>
+                <button>Option 3</button>
+                <button>Option 4</button>
             </div>
         </div>
     </div>
 
     <script>
-        // Retrieve the selected traveler from localStorage
         const traveler = localStorage.getItem('selectedTraveler');
         const travelerImage = document.getElementById('travelerImage');
-        
+        const travelerContainer = document.getElementById('traveler-container');
+
+        // Set traveler image and background based on selected traveler
         if (traveler) {
-            // Set the correct image based on the selected traveler
             travelerImage.src = `Images/TimeTravelers/${traveler}.png`;
-            
-            // Set the background for each traveler
             const background = document.querySelector('.background');
             background.style.backgroundImage = `url('Images/TimeTravelers/Backgrounds/${traveler}.jpg')`;
-            
-            // Apply specific positioning for each traveler
+
+            // Set traveler position based on the selection
             switch (traveler) {
                 case 'Option (1)':
-                    travelerImage.style.position = 'absolute';
-                    travelerImage.style.top = '20%';
-                    travelerImage.style.left = '15%';
+                    travelerContainer.style.top = '20%';  // Adjust as needed
+                    travelerContainer.style.left = '30%'; // Adjust as needed
                     break;
                 case 'Option (2)':
-                    travelerImage.style.position = 'absolute';
-                    travelerImage.style.top = '30%';
-                    travelerImage.style.left = '40%';
+                    travelerContainer.style.top = '30%';  // Adjust as needed
+                    travelerContainer.style.left = '60%'; // Adjust as needed
                     break;
                 case 'Option (3)':
-                    travelerImage.style.position = 'absolute';
-                    travelerImage.style.top = '10%';
-                    travelerImage.style.left = '60%';
+                    travelerContainer.style.top = '40%';  // Adjust as needed
+                    travelerContainer.style.left = '20%'; // Adjust as needed
                     break;
                 case 'Option (4)':
-                    travelerImage.style.position = 'absolute';
-                    travelerImage.style.top = '50%';
-                    travelerImage.style.left = '30%';
+                    travelerContainer.style.top = '50%';  // Adjust as needed
+                    travelerContainer.style.left = '50%'; // Adjust as needed
                     break;
                 default:
-                    travelerImage.style.position = 'absolute';
-                    travelerImage.style.top = '50%';
-                    travelerImage.style.left = '50%';
-                    break;
+                    travelerContainer.style.top = '50%';
+                    travelerContainer.style.left = '50%';
             }
         }
     </script>
