@@ -65,10 +65,13 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-decoration: none;
     color: white;
     background-color: rgba(0, 0, 0, 0.5);
     padding: 20px;
+    width: 200px; /* Fixed width */
+    height: 250px; /* Fixed height */
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     transition: transform 0.2s, box-shadow 0.2s;
@@ -80,7 +83,8 @@ body {
 }
 
 .option img {
-    max-width: 150px;
+    max-width: 100%; /* Scales image to fit within the box */
+    max-height: 70%; /* Ensures images don't overflow */
     height: auto;
     margin-bottom: 10px;
     border-radius: 5px;
@@ -90,4 +94,6 @@ body {
 .option span {
     font-size: 1.2em;
     text-shadow: 1px 1px 3px black;
+    text-align: center;
+    word-wrap: break-word; /* Ensures text stays within the box */
 }
