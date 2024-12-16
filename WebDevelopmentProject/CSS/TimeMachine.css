@@ -4,8 +4,8 @@ body {
     background-color: #000;
     height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column; /* Stack text box and traveler */
+    justify-content: space-between; /* Space out top text and bottom traveler */
     position: relative;
 }
 
@@ -22,28 +22,30 @@ body {
 
 .border-container {
     width: 80%;
-    height: 80%;
     padding: 20px;
     border: 10px solid #fff;
-    position: relative;
+    margin: 20px auto 0 auto; /* Keeps the box at the top */
     background-color: rgba(0, 0, 0, 0.7);
-    margin: 0 auto;  /* Ensures it's centered */
+    text-align: center;
 }
 
 .time-traveler {
-    position: absolute;  /* Positioned relative */
-    transform: translate(-50%, -50%);  /* Centers the image */
+    position: absolute; /* Position independent of text box */
+    bottom: 10%; /* Places the traveler near the bottom */
+    left: 50%; /* Centers the traveler horizontally */
+    transform: translateX(-50%); /* Precise centering */
+    max-width: 400px; /* Adjusts image size (make larger or smaller here) */
+    height: auto;
 }
 
 .time-traveler img {
-    width: 40%;  /* Traveler image size restored to original size */
+    width: 100%; /* Makes the traveler responsive to the container */
     height: auto;
 }
 
 .text-container {
     text-align: center;
     color: #fff;
-    margin-top: 20px;
 }
 
 .text-container p {
@@ -69,3 +71,4 @@ body {
 .buttons button:hover {
     background-color: #555;
 }
+
