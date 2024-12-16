@@ -69,10 +69,30 @@
         if (timeMachineOption) {
             timeMachineImage.src = `Images/TimeMachines/${timeMachineOption}.png`;
 
-            // Set the position of the time machine (lower on the page)
-            timeMachineContainer.style.bottom = '10%'; // Adjust as needed
-            timeMachineContainer.style.left = '50%'; // Center horizontally
-            timeMachineContainer.style.transform = 'translateX(-50%)'; // Precise centering
+            // Set the position of the time machine based on the selected option (lower on the page)
+            switch (timeMachineOption) {
+                case 'Option (1)':
+                    timeMachineContainer.style.bottom = '10%';
+                    timeMachineContainer.style.left = '10%'; // Adjust left as needed
+                    break;
+                case 'Option (2)':
+                    timeMachineContainer.style.bottom = '10%';
+                    timeMachineContainer.style.left = '40%'; // Adjust left as needed
+                    break;
+                case 'Option (3)':
+                    timeMachineContainer.style.bottom = '10%';
+                    timeMachineContainer.style.left = '70%'; // Adjust left as needed
+                    break;
+                case 'Option (4)':
+                    timeMachineContainer.style.bottom = '10%';
+                    timeMachineContainer.style.left = '50%'; // Center horizontally
+                    timeMachineContainer.style.transform = 'translateX(-50%)'; // Precise centering
+                    break;
+                default:
+                    timeMachineContainer.style.bottom = '10%';
+                    timeMachineContainer.style.left = '50%'; // Center horizontally by default
+                    timeMachineContainer.style.transform = 'translateX(-50%)';
+            }
         }
     </script>
 </body>
