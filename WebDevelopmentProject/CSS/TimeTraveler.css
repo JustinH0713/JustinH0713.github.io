@@ -1,40 +1,79 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Choose Your Time Traveler</title>
-    <link rel="stylesheet" href="CSS/TimeTraveler.css">
-</head>
-<body>
-    <div class="container">
-        <h1>Are you the time traveler everyone speaks of?</h1>
-        <p>Who are you?</p>
-        <div class="options">
-            <a href="TimeMachine.html" class="option" data-traveler="traveler1" onclick="selectTraveler('traveler1')">
-                <img src="Images/TimeTravelers/traveler1.jpg" alt="Just a Mad Scientist">
-                <span>Just a Mad Scientist</span>
-            </a>
-            <a href="TimeMachine.html" class="option" data-traveler="traveler2" onclick="selectTraveler('traveler2')">
-                <img src="Images/TimeTravelers/traveler2.jpg" alt="Just a Sentient Robot">
-                <span>Just a Sentient Robot</span>
-            </a>
-            <a href="TimeMachine.html" class="option" data-traveler="traveler3" onclick="selectTraveler('traveler3')">
-                <img src="Images/TimeTravelers/traveler3.jpg" alt="Just a Time Wizard">
-                <span>Just a Time Wizard</span>
-            </a>
-            <a href="TimeMachine.html" class="option" data-traveler="traveler4" onclick="selectTraveler('traveler4')">
-                <img src="Images/TimeTravelers/traveler4.jpg" alt="Just Some Random Guy">
-                <span>Just Some Random Guy</span>
-            </a>
-        </div>
-    </div>
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <script>
-        // Save the selected traveler to localStorage
-        function selectTraveler(traveler) {
-            localStorage.setItem('selectedTraveler', traveler);
-        }
-    </script>
-</body>
-</html>
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    background: url('../Images/TimeTravelers/Backgrounds/Option (1).png') no-repeat center center;
+    background-size: cover;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Container Styling */
+.container {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 30px 50px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+.container h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 5px #ff6600;
+}
+
+.container p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+/* Options Styling */
+.options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.option:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+}
+
+.option img {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+.option span {
+    font-size: 1.2em;
+    text-shadow: 1px 1px 3px black;
+}
