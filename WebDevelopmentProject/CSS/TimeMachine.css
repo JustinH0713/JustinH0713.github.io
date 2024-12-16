@@ -19,63 +19,42 @@ body {
     overflow: hidden;
 }
 
-/* Background Styling */
+/* Background Styling (Dynamic background based on traveler choice) */
 .background {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('../Images/TimeTravelers/Backgrounds/BG (1).jpg') no-repeat center center;
     background-size: cover;
+    background-position: center;
     z-index: -1;
-    filter: brightness(0.8);
+    filter: brightness(0.7);
 }
 
 /* Container Styling */
 .container {
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.85); /* Slight opacity */
-    padding: 80px 120px; /* Adjusted padding */
+    background-color: rgba(0, 0, 0, 0.7); /* Slight opacity */
+    padding: 40px;
     border-radius: 20px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-    max-width: 90%;
+    max-width: 80%;
+    z-index: 1;
 }
 
-/* Options Styling (Traveler images) */
-.options {
+/* Traveler Image Styling */
+.traveler {
     display: flex;
-    justify-content: space-between; /* Evenly space the items */
-    align-items: center;
-    gap: 50px; /* Spacing between the travelers */
-}
-
-.option {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    text-decoration: none;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.3); /* Slight background for travelers */
-    padding: 40px;
-    width: 300px;
-    height: 350px;
-    border-radius: 15px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
-    transition: transform 0.2s, box-shadow 0.2s;
+    align-items: center;
+    width: 100%;
+    height: 100%;
 }
 
-.option:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
-}
-
-.option img {
-    max-width: 100%; /* Ensures the image fits */
-    max-height: 80%; /* Prevents the image from overflowing */
+.traveler img {
+    max-width: 80%; /* Scale image to fit within the page */
     height: auto;
-    margin-bottom: 15px;
+    border: none;
     border-radius: 8px; /* Rounded corners */
-    border: none; /* Removes any border */
 }
