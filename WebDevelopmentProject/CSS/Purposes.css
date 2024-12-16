@@ -1,1 +1,73 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    height: 100vh;
+    display: flex;
+    flex-direction: column; /* Stack text box and time machine */
+    justify-content: space-between; /* Space out top text and bottom time machine */
+    position: relative;
+}
 
+.background {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+.border-container {
+    width: 80%;
+    padding: 20px;
+    border: 10px solid #fff;
+    margin: 20px auto 0 auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    text-align: center;
+}
+
+.text-container {
+    text-align: center;
+    color: #fff;
+}
+
+.text-container p {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.buttons button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+}
+
+.buttons button:hover {
+    background-color: #555;
+}
+
+.time-machine {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 400px;
+    height: auto;
+}
+
+.time-machine img {
+    width: 100%;
+    height: auto;
+}
