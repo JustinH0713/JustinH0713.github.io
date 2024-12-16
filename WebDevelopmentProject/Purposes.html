@@ -3,49 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Purposes</title>
-    <link rel="stylesheet" href="CSS/Purposes.css">
+    <title>Purposes of the Time Machine</title>
+    <link rel="stylesheet" href="CSS/Purposes.css"> <!-- Link to a separate CSS for purposes page -->
 </head>
 <body>
-    <div class="background"></div>
-
+    <div class="background"></div> <!-- Background image -->
     <div class="border-container">
+        <div class="time-traveler" id="traveler-container">
+            <img id="travelerImage" src="" alt="Time Traveler">
+        </div>
+        <div class="time-machine" id="time-machine-container">
+            <img id="timeMachineImage" src="" alt="Time Machine">
+        </div>
         <div class="text-container">
             <p>What is the purpose of your time machine?</p>
             <div class="buttons">
-                <button onclick="goToPage('Option (1)')">Option 1</button>
-                <button onclick="goToPage('Option (2)')">Option 2</button>
-                <button onclick="goToPage('Option (3)')">Option 3</button>
-                <button onclick="goToPage('Option (4)')">Option 4</button>
+                <button onclick="location.href='NextPage.html'">Find out more about its purpose</button>
+                <button onclick="location.href='NextPage.html'">What adventures await?</button>
+                <button onclick="location.href='NextPage.html'">Can it change history?</button>
+                <button onclick="location.href='NextPage.html'">What does the future hold?</button>
             </div>
         </div>
     </div>
 
-    <div class="time-machine" id="timeMachineContainer">
-        <img id="timeMachineImage" src="" alt="Time Machine">
-    </div>
-
     <script>
-        const timeMachine = localStorage.getItem('selectedTimeMachine');
+        // Get the selected traveler and time machine option from localStorage
+        const traveler = localStorage.getItem('selectedTraveler');
+        const timeMachineOption = localStorage.getItem('selectedOption');
+        const travelerImage = document.getElementById('travelerImage');
+        const travelerContainer = document.getElementById('traveler-container');
         const timeMachineImage = document.getElementById('timeMachineImage');
-        const timeMachineContainer = document.getElementById('timeMachineContainer');
+        const timeMachineContainer = document.getElementById('time-machine-container');
 
-        // Set time machine image based on selection
-        if (timeMachine) {
-            timeMachineImage.src = `Images/TimeMachines/${timeMachine}.png`;
+        // Set the traveler image and background based on selected traveler
+        if (traveler) {
+            travelerImage.src = `Images/TimeTravelers/${traveler}.png`;
+            const background = document.querySelector('.background');
+            background.style.backgroundImage = `url('Images/TimeTravelers/Backgrounds/${traveler}.jpg')`;
 
-            // Position time machine at the bottom of the page
-            timeMachineContainer.style.position = 'absolute';
-            timeMachineContainer.style.bottom = '10%';
-            timeMachineContainer.style.left = '50%';
-            timeMachineContainer.style.transform = 'translateX(-50%)';
-            timeMachineContainer.style.maxWidth = '400px';  // Adjust size if needed
+            // Set the position of the traveler based on the selection
+            switch (traveler) {
+                case 'Option (1)':
+                    travelerContainer.style.top = '80%';
+                    travelerContainer.style.left = '50%';
+                    break;
+                case 'Option (2)':
+                    travelerContainer.style.top = '30%';
+                    travelerContainer.style.left = '60%';
+                    break;
+                case 'Option (3)':
+                    travelerContainer.style.top = '40%';
+                    travelerContainer.style.left = '20%';
+                    break;
+                case 'Option (4)':
+                    travelerContainer.style.top = '50%';
+                    travelerContainer.style.left = '50%';
+                    break;
+                default:
+                    travelerContainer.style.top = '50%';
+                    travelerContainer.style.left = '50%';
+            }
         }
 
-        // Function to store the selected time machine in localStorage
-        function goToPage(option) {
-            localStorage.setItem('selectedTimeMachine', option);
-            window.location.href = 'Purposes.html';
+        // Set the time machine image based on the selected option
+        if (timeMachineOption) {
+            timeMachineImage.src = `Images/TimeMachines/${timeMachineOption}.png`;
+
+            // Set the position of the time machine (lower on the page)
+            timeMachineContainer.style.bottom = '10%'; // Adjust as needed
+            timeMachineContainer.style.left = '50%'; // Center horizontally
+            timeMachineContainer.style.transform = 'translateX(-50%)'; // Precise centering
         }
     </script>
 </body>
