@@ -67,6 +67,14 @@ body {
     margin-bottom: 20px;
 }
 
+.large-text {
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    margin-top: 20px;
+    text-align: center;
+}
+
 .buttons {
     display: flex;
     justify-content: center;
@@ -84,15 +92,4 @@ body {
 
 .buttons button:hover {
     background-color: #555;
-}
-
-.large-text {
-    position: absolute;
-    top: 30%; /* Places the large text in the middle */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%) translateY(-50%);
-    font-size: 50px; /* Adjust size as needed */
-    font-weight: bold;
-    color: #fff;
-    z-index: 1;
 }
