@@ -3,20 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Time Traveler Adventure - Time Machine</title>
-    <link rel="stylesheet" href="CSS/TimeMachine.css">
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Time Machine Adventure</title>
     <link rel="stylesheet" href="CSS/TimeMachine.css">
 </head>
 <body>
-    <div class="background">
-        <div class="time-traveler-container">
-            <img id="travelerImage" src="" alt="Selected Time Traveler">
+    <div class="content">
+        <!-- Container for the background and text -->
+        <div class="background-container">
+            <div class="background">
+                <div class="time-traveler-container">
+                    <img id="travelerImage" src="" alt="Selected Time Traveler" class="traveler">
+                </div>
+            </div>
+        </div>
+
+        <!-- Text and buttons -->
+        <div class="text-container">
+            <p>"Is it true what we've heard about your time machine?"</p>
+            <div class="buttons-container">
+                <button class="action-button">Button 1</button>
+                <button class="action-button">Button 2</button>
+                <button class="action-button">Button 3</button>
+                <button class="action-button">Button 4</button>
+            </div>
         </div>
     </div>
 
@@ -32,6 +41,35 @@
             // Set the background for each traveler
             const background = document.querySelector('.background');
             background.style.backgroundImage = `url('Images/TimeTravelers/Backgrounds/${traveler}.jpg')`;
+            
+            // Apply specific positioning for each traveler
+            switch (traveler) {
+                case 'Option (1)':
+                    travelerImage.style.position = 'absolute';
+                    travelerImage.style.top = '20%';
+                    travelerImage.style.left = '15%';
+                    break;
+                case 'Option (2)':
+                    travelerImage.style.position = 'absolute';
+                    travelerImage.style.top = '30%';
+                    travelerImage.style.left = '40%';
+                    break;
+                case 'Option (3)':
+                    travelerImage.style.position = 'absolute';
+                    travelerImage.style.top = '10%';
+                    travelerImage.style.left = '60%';
+                    break;
+                case 'Option (4)':
+                    travelerImage.style.position = 'absolute';
+                    travelerImage.style.top = '50%';
+                    travelerImage.style.left = '30%';
+                    break;
+                default:
+                    travelerImage.style.position = 'absolute';
+                    travelerImage.style.top = '50%';
+                    travelerImage.style.left = '50%';
+                    break;
+            }
         }
     </script>
 </body>
