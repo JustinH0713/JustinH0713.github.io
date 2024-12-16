@@ -1,4 +1,4 @@
-/* Apply a full viewport height to the background */
+/* Apply a full viewport height to the body */
 body, html {
     margin: 0;
     padding: 0;
@@ -6,30 +6,83 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #000; /* Default background color if no image is set */
+    background-color: #f0f0f0; /* A neutral background */
 }
 
-/* Full-screen background styling */
+/* Container that holds the entire content */
+.content {
+    text-align: center;
+}
+
+/* Container for the background image */
+.background-container {
+    width: 80%;  /* Limit the background container width */
+    height: 400px; /* Fixed height for the background box */
+    margin: 20px auto;
+    border: 5px solid #333;  /* Border for the background container */
+    position: relative;
+    overflow: hidden;
+    background-color: #ddd; /* Default background color */
+}
+
+/* Full background styling inside the container */
 .background {
     width: 100%;
     height: 100%;
     background-size: cover;
     background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
-/* Styling for the time traveler container */
+/* Container for the time traveler image */
 .time-traveler-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
 /* Style for the time traveler image */
-#travelerImage {
-    max-width: 80%; /* Ensure the image is responsive and doesn't overflow */
+.traveler {
+    max-width: 50%; /* Adjust the size of the traveler image */
     height: auto;
-    border-radius: 10px; /* Optional: rounds the corners of the image */
+    border-radius: 10px;
+    position: absolute;
+}
+
+/* Container for the text */
+.text-container {
+    margin-top: 20px;
+}
+
+/* Text style */
+.text-container p {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Container for the buttons */
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Space between buttons */
+}
+
+/* Style for the buttons */
+.action-button {
+    padding: 10px 20px;
+    font-size: 1em;
+    border: 2px solid #333;
+    background-color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.action-button:hover {
+    background-color: #ddd; /* Change color when hovering */
 }
