@@ -15,7 +15,7 @@
     </div>
 
     <script>
-        // Set the traveler image and background based on the selection
+        // Get the query parameter from the URL
         const urlParams = new URLSearchParams(window.location.search);
         const traveler = urlParams.get('traveler');
 
@@ -23,6 +23,7 @@
         let backgroundImage = '';
         let travelerImage = '';
 
+        // Check if 'traveler' is available, otherwise default to Option (1)
         switch(traveler) {
             case '1':
                 backgroundImage = 'Images/TimeTravelers/Backgrounds/Option (1).jpg';
@@ -46,8 +47,14 @@
         }
 
         // Update the background and traveler image dynamically
-        document.getElementById('background').style.backgroundImage = `url(${backgroundImage})`;
-        document.getElementById('travelerImage').src = travelerImage;
+        if (traveler) {
+            document.getElementById('background').style.backgroundImage = `url(${backgroundImage})`;
+            document.getElementById('travelerImage').src = travelerImage;
+        } else {
+            // Default to Option 1 if no traveler is selected
+            document.getElementById('background').style.backgroundImage = `url(Images/TimeTravelers/Backgrounds/Option (1).jpg)`;
+            document.getElementById('travelerImage').src = 'Images/TimeTravelers/Option (1).png';
+        }
     </script>
 </body>
 </html>
