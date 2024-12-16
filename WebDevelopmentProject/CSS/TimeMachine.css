@@ -9,36 +9,73 @@
 body {
     font-family: Arial, sans-serif;
     height: 100vh;
-    background-size: cover;
-    background-position: center;
+    background: none; /* Background will be added via .background */
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background Styling */
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../Images/TimeTravelers/Backgrounds/BG (1).jpg') no-repeat center center;
+    background-size: cover;
+    z-index: -1;
+    filter: brightness(0.8);
 }
 
 /* Container Styling */
 .container {
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 30px 50px;
+    background-color: rgba(0, 0, 0, 0.85); /* Slight opacity */
+    padding: 80px 120px; /* Adjusted padding */
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    max-width: 90%;
+}
+
+/* Options Styling (Traveler images) */
+.options {
+    display: flex;
+    justify-content: space-between; /* Evenly space the items */
+    align-items: center;
+    gap: 50px; /* Spacing between the travelers */
+}
+
+.option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3); /* Slight background for travelers */
+    padding: 40px;
+    width: 300px;
+    height: 350px;
     border-radius: 15px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.container h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 5px #ff6600;
+.option:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
 }
 
-/* Traveler Image Styling */
-.traveler-image {
-    max-width: 300px;
+.option img {
+    max-width: 100%; /* Ensures the image fits */
+    max-height: 80%; /* Prevents the image from overflowing */
     height: auto;
-    margin-top: 20px;
-    border-radius: 10px;
-    border: none;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+    margin-bottom: 15px;
+    border-radius: 8px; /* Rounded corners */
+    border: none; /* Removes any border */
 }
