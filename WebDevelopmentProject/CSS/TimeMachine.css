@@ -1,88 +1,67 @@
-/* Apply a full viewport height to the body */
-body, html {
+body {
     margin: 0;
-    padding: 0;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f0f0f0; /* A neutral background */
+    font-family: Arial, sans-serif;
+    background-color: #000;
 }
 
-/* Container that holds the entire content */
-.content {
-    text-align: center;
-}
-
-/* Container for the background image */
-.background-container {
-    width: 80%;  /* Limit the background container width */
-    height: 400px; /* Fixed height for the background box */
-    margin: 20px auto;
-    border: 5px solid #333;  /* Border for the background container */
-    position: relative;
-    overflow: hidden;
-    background-color: #ddd; /* Default background color */
-}
-
-/* Full background styling inside the container */
 .background {
     width: 100%;
     height: 100%;
-    background-size: cover;
-    background-position: center;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
 }
 
-/* Container for the time traveler image */
-.time-traveler-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    width: 100%;
-    height: 100%;
+.border-container {
+    width: 80%;
+    height: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    border: 10px solid #fff;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
-/* Style for the time traveler image */
-.traveler {
-    max-width: 50%; /* Adjust the size of the traveler image */
+.time-traveler {
+    position: absolute;  /* Position traveler in a custom place */
+    transform: translate(-50%, -50%);  /* Centers the image based on the coordinates */
+}
+
+.time-traveler img {
+    width: 30%;
     height: auto;
-    border-radius: 10px;
-    position: absolute;
+    position: relative;
 }
 
-/* Container for the text */
 .text-container {
+    text-align: center;
+    color: #fff;
     margin-top: 20px;
 }
 
-/* Text style */
 .text-container p {
-    font-size: 1.5em;
-    color: #333;
+    font-size: 24px;
     margin-bottom: 20px;
 }
 
-/* Container for the buttons */
-.buttons-container {
+.buttons {
     display: flex;
     justify-content: center;
-    gap: 10px; /* Space between buttons */
+    gap: 20px;
 }
 
-/* Style for the buttons */
-.action-button {
+.buttons button {
     padding: 10px 20px;
-    font-size: 1em;
-    border: 2px solid #333;
-    background-color: #fff;
+    font-size: 16px;
+    border: none;
+    background-color: #333;
+    color: white;
     cursor: pointer;
-    transition: background-color 0.3s;
 }
 
-.action-button:hover {
-    background-color: #ddd; /* Change color when hovering */
+.buttons button:hover {
+    background-color: #555;
 }
