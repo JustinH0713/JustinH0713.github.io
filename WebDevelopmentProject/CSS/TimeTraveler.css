@@ -35,7 +35,7 @@ body {
 /* Container Styling */
 .container {
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.85); /* Increased opacity */
     padding: 30px 50px;
     border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
@@ -54,11 +54,10 @@ body {
 
 /* Options Styling */
 .options {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    justify-content: center;
+    display: flex; /* Changed from grid to flexbox */
+    justify-content: space-between; /* Evenly space the items */
     align-items: center;
+    gap: 20px; /* Consistent spacing between the items */
 }
 
 .option {
