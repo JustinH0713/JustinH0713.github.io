@@ -4,58 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Purposes</title>
-    <link rel="stylesheet" href="CSS/TimeMachine.css">
+    <link rel="stylesheet" href="CSS/Purposes.css">
 </head>
 <body>
     <div class="background"></div>
+
     <div class="border-container">
-        <div class="time-machine" id="machine-container">
-            <img id="machineImage" src="" alt="Time Machine">
-        </div>
         <div class="text-container">
-            <p>What do you plan to do with the time machine?</p>
+            <p>What is the purpose of your time machine?</p>
             <div class="buttons">
-                <button>Option 1</button>
-                <button>Option 2</button>
-                <button>Option 3</button>
-                <button>Option 4</button>
+                <button onclick="goToPage('Option (1)')">Option 1</button>
+                <button onclick="goToPage('Option (2)')">Option 2</button>
+                <button onclick="goToPage('Option (3)')">Option 3</button>
+                <button onclick="goToPage('Option (4)')">Option 4</button>
             </div>
         </div>
     </div>
 
+    <div class="time-machine" id="timeMachineContainer">
+        <img id="timeMachineImage" src="" alt="Time Machine">
+    </div>
+
     <script>
-        const timeMachine = localStorage.getItem('selectedTraveler');
-        const machineImage = document.getElementById('machineImage');
-        const machineContainer = document.getElementById('machine-container');
+        const timeMachine = localStorage.getItem('selectedTimeMachine');
+        const timeMachineImage = document.getElementById('timeMachineImage');
+        const timeMachineContainer = document.getElementById('timeMachineContainer');
 
-        // Set time machine image and background based on the selected traveler
+        // Set time machine image based on selection
         if (timeMachine) {
-            machineImage.src = `Images/TimeMachines/${timeMachine}.png`;
-            const background = document.querySelector('.background');
-            background.style.backgroundImage = `url('Images/TimeMachines/Backgrounds/${timeMachine}.jpg')`;
+            timeMachineImage.src = `Images/TimeMachines/${timeMachine}.png`;
 
-            // Preserves time machine positioning similar to the traveler
-            switch (timeMachine) {
-                case 'Option (1)':
-                    machineContainer.style.top = '80%';
-                    machineContainer.style.left = '50%';
-                    break;
-                case 'Option (2)':
-                    machineContainer.style.top = '30%';
-                    machineContainer.style.left = '60%';
-                    break;
-                case 'Option (3)':
-                    machineContainer.style.top = '40%';
-                    machineContainer.style.left = '20%';
-                    break;
-                case 'Option (4)':
-                    machineContainer.style.top = '50%';
-                    machineContainer.style.left = '50%';
-                    break;
-                default:
-                    machineContainer.style.top = '50%';
-                    machineContainer.style.left = '50%';
-            }
+            // Position time machine at the bottom of the page
+            timeMachineContainer.style.position = 'absolute';
+            timeMachineContainer.style.bottom = '10%';
+            timeMachineContainer.style.left = '50%';
+            timeMachineContainer.style.transform = 'translateX(-50%)';
+            timeMachineContainer.style.maxWidth = '400px';  // Adjust size if needed
+        }
+
+        // Function to store the selected time machine in localStorage
+        function goToPage(option) {
+            localStorage.setItem('selectedTimeMachine', option);
+            window.location.href = 'Purposes.html';
         }
     </script>
 </body>
