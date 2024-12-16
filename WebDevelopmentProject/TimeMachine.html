@@ -3,34 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Time Machine</title>
+    <title>Time Traveler Adventure - Time Machine</title>
     <link rel="stylesheet" href="CSS/TimeMachine.css">
 </head>
 <body>
+    <div class="background"></div>
     <div class="container">
-        <h1>Your Time Machine Awaits!</h1>
-        <div id="time-traveler"></div>
+        <h1>Welcome to the Time Machine</h1>
+        <p>Choose your time traveler to embark on your adventure!</p>
+        <div class="options">
+            <a href="#" class="option">
+                <img src="Images/TimeTravelers/Option (1).png" alt="Just a Mad Scientist">
+            </a>
+            <a href="#" class="option">
+                <img src="Images/TimeTravelers/Option (2).png" alt="Just a Sentient Robot">
+            </a>
+            <a href="#" class="option">
+                <img src="Images/TimeTravelers/Option (3).png" alt="Just a Time Wizard">
+            </a>
+            <a href="#" class="option">
+                <img src="Images/TimeTravelers/Option (4).png" alt="Just Some Random Guy">
+            </a>
+        </div>
     </div>
-
-    <script>
-        // Retrieve the selected traveler and set the background and image
-        const selectedTraveler = localStorage.getItem('selectedTraveler');
-        const container = document.querySelector('.container');
-
-        if (selectedTraveler) {
-            // Update the background
-            document.body.style.backgroundImage = `url('Images/TimeTravelers/Backgrounds/${selectedTraveler}.jpg')`;
-
-            // Add the traveler's image
-            const travelerImage = document.createElement('img');
-            travelerImage.src = `Images/TimeTravelers/${selectedTraveler}.png`;
-            travelerImage.alt = selectedTraveler;
-            travelerImage.className = 'traveler-image';
-            document.getElementById('time-traveler').appendChild(travelerImage);
-        } else {
-            // If no traveler is selected, redirect to the traveler selection page
-            window.location.href = 'TimeTraveler.html';
-        }
-    </script>
 </body>
 </html>
