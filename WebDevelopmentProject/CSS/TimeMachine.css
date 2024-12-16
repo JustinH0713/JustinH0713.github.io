@@ -1,24 +1,3 @@
-/* Add styles for the links that are styled like buttons */
-.button-link {
-    text-decoration: none;  /* Remove underline from links */
-}
-
-.button-link button {
-    background-color: #333;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin: 5px; /* Add spacing between buttons */
-}
-
-.button-link button:hover {
-    background-color: #555;
-}
-
-/* Make sure everything else is styled as you had it before */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -46,14 +25,14 @@ body {
 }
 
 .time-traveler {
-    position: relative;  /* Positioned relative */
+    position: absolute;  /* Positioned relative */
     bottom: 0; /* Traveler at the bottom */
     left: 50%;  /* Center horizontally */
     transform: translateX(-50%); /* Center the image exactly */
 }
 
 .time-traveler img {
-    width: 60%;  /* Traveler image size increased */
+    width: 30%;  /* Original size for the traveler image */
     height: auto;
 }
 
@@ -72,4 +51,23 @@ body {
     display: flex;
     justify-content: center;
     gap: 20px;
+}
+
+.button-link {
+    text-decoration: none;  /* Remove underline from links */
+}
+
+.button-link button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 5px; /* Add spacing between buttons */
+}
+
+.button-link button:hover {
+    background-color: #555;
 }
