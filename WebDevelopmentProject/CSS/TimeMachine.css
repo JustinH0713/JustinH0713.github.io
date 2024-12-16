@@ -27,11 +27,13 @@ body {
 
 .time-traveler {
     position: absolute;  /* Position traveler in a custom place */
-    transform: translate(-50%, -50%);  /* Centers the image based on the coordinates */
+    bottom: 10px; /* Adjust the position of the traveler to the bottom */
+    left: 50%;
+    transform: translateX(-50%);  /* Centers the image horizontally */
 }
 
 .time-traveler img {
-    width: 30%;
+    width: 40%;  /* Increase the size of the traveler */
     height: auto;
     position: relative;
 }
@@ -63,5 +65,4 @@ body {
 }
 
 .buttons button:hover {
-    background-color: #555;
-}
+    backgr
