@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prehistoric Creatures</title>
-    <link rel="stylesheet" href="CSS/PrehistoricCreature.css"> <!-- Link to a separate CSS for this page -->
+    <link rel="stylesheet" href="CSS/Prehistoric.css"> <!-- Link to a separate CSS for prehistoric page -->
 </head>
 <body>
     <div class="background"></div> <!-- Background image -->
@@ -15,14 +15,17 @@
         <div class="time-machine" id="time-machine-container">
             <img id="timeMachineImage" src="" alt="Time Machine">
         </div>
+        <div class="large-text">
+            <!-- Display large text based on purpose -->
+            <p id="purpose-text"></p>
+        </div>
         <div class="text-container">
-            <p id="large-text"></p> <!-- Large text displayed across the screen -->
-
+            <p>What will you do with your time machine?</p>
             <div class="buttons">
-                <button onclick="location.href='NextPage.html'">Learn About Prehistoric Creatures</button>
-                <button onclick="location.href='NextPage.html'">How to Survive the Prehistoric Era</button>
-                <button onclick="location.href='NextPage.html'">What Will We Discover?</button>
-                <button onclick="location.href='NextPage.html'">Can We Change the Past?</button>
+                <button onclick="location.href='NextPage.html'">Find out more about the creatures</button>
+                <button onclick="location.href='NextPage.html'">What adventures await?</button>
+                <button onclick="location.href='NextPage.html'">Can it change history?</button>
+                <button onclick="location.href='NextPage.html'">What does the future hold?</button>
             </div>
         </div>
     </div>
@@ -30,12 +33,12 @@
     <script>
         // Get the selected traveler and purpose from localStorage
         const traveler = localStorage.getItem('selectedTraveler');
-        const purpose = localStorage.getItem('selectedPurpose'); // Purpose from purposes page
+        const purpose = localStorage.getItem('selectedPurpose'); // Get the stored purpose from previous page
         const travelerImage = document.getElementById('travelerImage');
         const travelerContainer = document.getElementById('traveler-container');
         const timeMachineImage = document.getElementById('timeMachineImage');
         const timeMachineContainer = document.getElementById('time-machine-container');
-        const largeTextElement = document.getElementById('large-text');
+        const purposeText = document.getElementById('purpose-text'); // For displaying the large text
 
         // Set the traveler image and background based on selected traveler
         if (traveler) {
@@ -93,29 +96,13 @@
         }
 
         // Set the time machine image based on the selected option (you can keep the same)
-        const timeMachineOption = localStorage.getItem('selectedOption');
         if (timeMachineOption) {
             timeMachineImage.src = `Images/TimeMachines/${timeMachineOption}.png`;
         }
 
-        // Display large text based on the selected purpose
+        // Display large text based on the purpose
         if (purpose) {
-            switch (purpose) {
-                case 'World Domination':
-                    largeTextElement.textContent = "WORLD DOMINATION!";
-                    break;
-                case 'Just Bored':
-                    largeTextElement.textContent = "JUST BORED...";
-                    break;
-                case 'New Friends':
-                    largeTextElement.textContent = "MAKING NEW FRIENDS!";
-                    break;
-                case 'Societal Benefit':
-                    largeTextElement.textContent = "SOCIETAL BENEFIT!";
-                    break;
-                default:
-                    largeTextElement.textContent = "MYSTERIOUS PURPOSE!";
-            }
+            purposeText.textContent = `Purpose: ${purpose}`;
         }
     </script>
 </body>
