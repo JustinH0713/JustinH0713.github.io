@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Time Machine</title>
+    <title>Time Traveler</title>
     <link rel="stylesheet" href="CSS/TimeMachine.css">
 </head>
 <body>
@@ -16,10 +15,10 @@
         <div class="text-container">
             <p>Is it true what we've heard about your time machine?</p>
             <div class="buttons">
-                <button>Yes, it was owned by Dr. Who</button>
-                <button>Yes, it was Da Vinci's design</button>
-                <button>Yes, it was in Back to the Future</button>
-                <button>Yes, I got it from an anime character</button>
+                <button onclick="location.href='Purposes.html'">Yes, it was owned by Dr. Who</button>
+                <button onclick="location.href='Purposes.html'">Yes, it was Da Vinci's design</button>
+                <button onclick="location.href='Purposes.html'">Yes, it was in Back to the Future</button>
+                <button onclick="location.href='Purposes.html'">Yes, I got it from an anime character</button>
             </div>
         </div>
     </div>
@@ -35,23 +34,23 @@
             const background = document.querySelector('.background');
             background.style.backgroundImage = `url('Images/TimeTravelers/Backgrounds/${traveler}.jpg')`;
 
-            // Set traveler position based on the selection
+            // Preserves traveler positioning based on their option
             switch (traveler) {
                 case 'Option (1)':
-                    travelerContainer.style.top = '80%';  // Adjust as needed
-                    travelerContainer.style.left = '50%'; // Adjust as needed
+                    travelerContainer.style.top = '80%';
+                    travelerContainer.style.left = '50%';
                     break;
                 case 'Option (2)':
-                    travelerContainer.style.top = '30%';  // Adjust as needed
-                    travelerContainer.style.left = '60%'; // Adjust as needed
+                    travelerContainer.style.top = '30%';
+                    travelerContainer.style.left = '60%';
                     break;
                 case 'Option (3)':
-                    travelerContainer.style.top = '40%';  // Adjust as needed
-                    travelerContainer.style.left = '20%'; // Adjust as needed
+                    travelerContainer.style.top = '40%';
+                    travelerContainer.style.left = '20%';
                     break;
                 case 'Option (4)':
-                    travelerContainer.style.top = '50%';  // Adjust as needed
-                    travelerContainer.style.left = '50%'; // Adjust as needed
+                    travelerContainer.style.top = '50%';
+                    travelerContainer.style.left = '50%';
                     break;
                 default:
                     travelerContainer.style.top = '50%';
@@ -61,4 +60,3 @@
     </script>
 </body>
 </html>
-
