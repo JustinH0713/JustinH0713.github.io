@@ -5,55 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Time Traveler Adventure - Time Machine</title>
     <link rel="stylesheet" href="CSS/TimeMachine.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Time Machine Adventure</title>
+    <link rel="stylesheet" href="CSS/TimeMachine.css">
 </head>
 <body>
-    <div class="background" id="background"></div>
-    <div class="container">
-        <div class="traveler">
-            <img id="travelerImage" src="" alt="Time Traveler">
+    <div class="background">
+        <div class="time-traveler-container">
+            <img id="travelerImage" src="" alt="Selected Time Traveler">
         </div>
     </div>
 
     <script>
-        // Get the query parameter from the URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const traveler = urlParams.get('traveler');
-
-        // Set the background and traveler image based on the selected traveler
-        let backgroundImage = '';
-        let travelerImage = '';
-
-        // Check if 'traveler' is available, otherwise default to Option (1)
-        switch(traveler) {
-            case '1':
-                backgroundImage = 'Images/TimeTravelers/Backgrounds/Option (1).jpg';
-                travelerImage = 'Images/TimeTravelers/Option (1).png';
-                break;
-            case '2':
-                backgroundImage = 'Images/TimeTravelers/Backgrounds/Option (2).jpg';
-                travelerImage = 'Images/TimeTravelers/Option (2).png';
-                break;
-            case '3':
-                backgroundImage = 'Images/TimeTravelers/Backgrounds/Option (3).jpg';
-                travelerImage = 'Images/TimeTravelers/Option (3).png';
-                break;
-            case '4':
-                backgroundImage = 'Images/TimeTravelers/Backgrounds/Option (4).jpg';
-                travelerImage = 'Images/TimeTravelers/Option (4).png';
-                break;
-            default:
-                backgroundImage = 'Images/TimeTravelers/Backgrounds/Option (1).jpg';
-                travelerImage = 'Images/TimeTravelers/Option (1).png';
-        }
-
-        // Update the background and traveler image dynamically
+        // Retrieve the selected traveler from localStorage
+        const traveler = localStorage.getItem('selectedTraveler');
+        const travelerImage = document.getElementById('travelerImage');
+        
         if (traveler) {
-            document.getElementById('background').style.backgroundImage = `url(${backgroundImage})`;
-            document.getElementById('travelerImage').src = travelerImage;
-        } else {
-            // Default to Option 1 if no traveler is selected
-            document.getElementById('background').style.backgroundImage = `url(Images/TimeTravelers/Backgrounds/Option (1).jpg)`;
-            document.getElementById('travelerImage').src = 'Images/TimeTravelers/Option (1).png';
+            // Set the correct image based on the selected traveler
+            travelerImage.src = `Images/TimeTravelers/${traveler}.png`;
+            
+            // Set the background for each traveler
+            const background = document.querySelector('.background');
+            background.style.backgroundImage = `url('Images/TimeTravelers/Backgrounds/${traveler}.jpg')`;
         }
     </script>
 </body>
