@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prehistoric Creatures</title>
-    <link rel="stylesheet" href="CSS/Prehistoric.css"> <!-- Link to a separate CSS for prehistoric page -->
+    <link rel="stylesheet" href="CSS/PrehistoricCreature.css"> <!-- Link to CSS -->
 </head>
 <body>
     <div class="background"></div> <!-- Background image -->
@@ -15,38 +15,34 @@
         <div class="time-machine" id="time-machine-container">
             <img id="timeMachineImage" src="" alt="Time Machine">
         </div>
-        <div class="large-text">
-            <!-- Display large text based on purpose -->
-            <p id="purpose-text"></p>
-        </div>
         <div class="text-container">
-            <p>What will you do with your time machine?</p>
+            <p>What is your purpose in all this?</p>
             <div class="buttons">
-                <button onclick="location.href='NextPage.html'">Find out more about the creatures</button>
-                <button onclick="location.href='NextPage.html'">What adventures await?</button>
-                <button onclick="location.href='NextPage.html'">Can it change history?</button>
-                <button onclick="location.href='NextPage.html'">What does the future hold?</button>
+                <button onclick="location.href='PrehistoricCreature.html'">World Domination</button>
+                <button onclick="location.href='PrehistoricCreature.html'">Just Bored</button>
+                <button onclick="location.href='PrehistoricCreature.html'">New Friends</button>
+                <button onclick="location.href='PrehistoricCreature.html'">Societal Benefit</button>
             </div>
         </div>
+        <div class="large-text" id="purpose-text"></div> <!-- This is the large text -->
     </div>
 
     <script>
-        // Get the selected traveler and purpose from localStorage
+        // Get the selected traveler and time machine options from localStorage
         const traveler = localStorage.getItem('selectedTraveler');
-        const purpose = localStorage.getItem('selectedPurpose'); // Get the stored purpose from previous page
+        const timeMachineOption = localStorage.getItem('selectedOption');
         const travelerImage = document.getElementById('travelerImage');
         const travelerContainer = document.getElementById('traveler-container');
         const timeMachineImage = document.getElementById('timeMachineImage');
         const timeMachineContainer = document.getElementById('time-machine-container');
-        const purposeText = document.getElementById('purpose-text'); // For displaying the large text
+        const background = document.querySelector('.background');
+        const purposeText = document.getElementById('purpose-text'); // Large text
 
-        // Set the traveler image and background based on selected traveler
+        // Set the background image based on the selected traveler
         if (traveler) {
-            travelerImage.src = `Images/TimeTravelers/${traveler}.png`;
-            const background = document.querySelector('.background');
             background.style.backgroundImage = `url('Images/TimeTravelers/Backgrounds/${traveler}.jpg')`;
 
-            // Set the position of the traveler based on the selection
+            // Set the position of the traveler and time machine (same as before)
             switch (traveler) {
                 case 'Option (1)':
                     travelerContainer.style.top = '80%';
@@ -69,40 +65,41 @@
                     travelerContainer.style.left = '50%';
             }
 
-            // Position the time machine based on the selected traveler
+            // Set the position of the time machine (same as before)
             switch (traveler) {
                 case 'Option (1)':
                     timeMachineContainer.style.bottom = '10%';
-                    timeMachineContainer.style.left = '10%'; // Adjust left as needed for Option 1
+                    timeMachineContainer.style.left = '10%';
                     break;
                 case 'Option (2)':
                     timeMachineContainer.style.bottom = '10%';
-                    timeMachineContainer.style.left = '40%'; // Adjust left as needed for Option 2
+                    timeMachineContainer.style.left = '40%';
                     break;
                 case 'Option (3)':
                     timeMachineContainer.style.bottom = '10%';
-                    timeMachineContainer.style.left = '70%'; // Adjust left as needed for Option 3
+                    timeMachineContainer.style.left = '70%';
                     break;
                 case 'Option (4)':
                     timeMachineContainer.style.bottom = '10%';
-                    timeMachineContainer.style.left = '50%'; // Center horizontally for Option 4
+                    timeMachineContainer.style.left = '50%';
                     timeMachineContainer.style.transform = 'translateX(-50%)';
                     break;
                 default:
                     timeMachineContainer.style.bottom = '10%';
-                    timeMachineContainer.style.left = '50%'; // Center horizontally by default
+                    timeMachineContainer.style.left = '50%';
                     timeMachineContainer.style.transform = 'translateX(-50%)';
             }
         }
 
-        // Set the time machine image based on the selected option (you can keep the same)
+        // Set the time machine image based on the selected option
         if (timeMachineOption) {
             timeMachineImage.src = `Images/TimeMachines/${timeMachineOption}.png`;
         }
 
-        // Display large text based on the purpose
-        if (purpose) {
-            purposeText.textContent = `Purpose: ${purpose}`;
+        // Display the purpose text
+        const selectedPurpose = localStorage.getItem('selectedPurpose');
+        if (selectedPurpose) {
+            purposeText.innerText = selectedPurpose;
         }
     </script>
 </body>
