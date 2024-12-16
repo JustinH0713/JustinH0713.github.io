@@ -15,15 +15,21 @@
         <div class="text-container">
             <p>Is it true what we've heard about your time machine?</p>
             <div class="buttons">
-                <button onclick="location.href='Purposes.html'">Yes, it was owned by Dr. Who</button>
-                <button onclick="location.href='Purposes.html'">Yes, it was Da Vinci's design</button>
-                <button onclick="location.href='Purposes.html'">Yes, it was in Back to the Future</button>
-                <button onclick="location.href='Purposes.html'">Yes, I got it from an anime character</button>
+                <button onclick="selectOption('Option (1)')">Yes, it was owned by Dr. Who</button>
+                <button onclick="selectOption('Option (2)')">Yes, it was Da Vinci's design</button>
+                <button onclick="selectOption('Option (3)')">Yes, it was in Back to the Future</button>
+                <button onclick="selectOption('Option (4)')">Yes, I got it from an anime character</button>
             </div>
         </div>
     </div>
 
     <script>
+        // Function to store the selected option in localStorage and redirect to the Purposes page
+        function selectOption(option) {
+            localStorage.setItem('selectedOption', option); // Store the selected option
+            window.location.href = 'Purposes.html'; // Redirect to the purposes page
+        }
+
         const traveler = localStorage.getItem('selectedTraveler');
         const travelerImage = document.getElementById('travelerImage');
         const travelerContainer = document.getElementById('traveler-container');
