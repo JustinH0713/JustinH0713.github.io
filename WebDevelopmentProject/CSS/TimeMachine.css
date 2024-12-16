@@ -2,6 +2,11 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #000;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
 
 .background {
@@ -22,17 +27,16 @@ body {
     border: 10px solid #fff;
     position: relative;
     background-color: rgba(0, 0, 0, 0.7);
+    margin: 0 auto;  /* Ensures it's centered */
 }
 
 .time-traveler {
     position: absolute;  /* Positioned relative */
-    bottom: 0; /* Traveler at the bottom */
-    left: 50%;  /* Center horizontally */
-    transform: translateX(-50%); /* Center the image exactly */
+    transform: translate(-50%, -50%);  /* Centers the image */
 }
 
 .time-traveler img {
-    width: 30%;  /* Original size for the traveler image */
+    width: 40%;  /* Traveler image size restored to original size */
     height: auto;
 }
 
@@ -53,21 +57,15 @@ body {
     gap: 20px;
 }
 
-.button-link {
-    text-decoration: none;  /* Remove underline from links */
-}
-
-.button-link button {
-    background-color: #333;
-    color: white;
-    border: none;
+.buttons button {
     padding: 10px 20px;
     font-size: 16px;
+    border: none;
+    background-color: #333;
+    color: white;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin: 5px; /* Add spacing between buttons */
 }
 
-.button-link button:hover {
+.buttons button:hover {
     background-color: #555;
 }
