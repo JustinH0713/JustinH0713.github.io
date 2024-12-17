@@ -4,8 +4,8 @@ body {
     background-color: #000;
     height: 100vh;
     display: flex;
-    flex-direction: column; /* Stack text box and traveler */
-    justify-content: space-between; /* Space out top text and bottom traveler */
+    flex-direction: column;
+    justify-content: space-between;
     position: relative;
 }
 
