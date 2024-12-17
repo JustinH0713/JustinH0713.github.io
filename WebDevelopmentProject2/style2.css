@@ -1,0 +1,25 @@
+body {
+    background-color: #252525;
+    color: #d1d1d1;
+    font-family: 'Georgia', serif;
+}
+.container {
+    text-align: center;
+    margin-top: 20%;
+}
+h1 {
+    color: #ff6347;
+}
+p {
+    font-size: 1.3rem;
+}
+.choices a {
+    display: block;
+    margin: 10px auto;
+    color: #ff6347;
+    text-decoration: none;
+    font-weight: bold;
+}
+.choices a:hover {
+    text-decoration: underline;
+}
