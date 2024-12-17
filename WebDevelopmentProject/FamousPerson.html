@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="CSS/FamousPerson.css">
 </head>
 <body>
-    <div class="background"></div> <!-- Background image -->
-    
+    <!-- Background -->
+    <div class="background"></div>
+
     <!-- Time Traveler -->
     <div class="time-traveler" id="traveler-container">
         <img id="travelerImage" src="" alt="Time Traveler">
@@ -19,79 +20,81 @@
         <img id="timeMachineImage" src="" alt="Time Machine">
     </div>
 
-    <!-- Question Box with Buttons -->
+    <!-- Content Box with Text and Buttons -->
     <div class="border-container">
         <div class="text-container">
-            <p>Who would you like to learn more about?</p>
+            <p>Who do you think was the most influential person of this time?</p>
             <div class="buttons">
-                <button onclick="saveSelection('Person1')">Person 1</button>
-                <button onclick="saveSelection('Person2')">Person 2</button>
-                <button onclick="saveSelection('Person3')">Person 3</button>
-                <button onclick="saveSelection('Person4')">Person 4</button>
+                <button onclick="saveSelection('Option (1)')">Option 1</button>
+                <button onclick="saveSelection('Option (2)')">Option 2</button>
+                <button onclick="saveSelection('Option (3)')">Option 3</button>
+                <button onclick="saveSelection('Option (4)')">Option 4</button>
             </div>
         </div>
     </div>
 
     <script>
-        // Get the selected creature and background from localStorage
-        const selectedCreature = localStorage.getItem('selectedCreature');
+        // Load saved data from localStorage
         const selectedBackground = localStorage.getItem('selectedBackground');
-        const selectedCreatureImage = localStorage.getItem('selectedCreatureImage');
-        const travelerImage = document.getElementById('travelerImage');
-        const travelerContainer = document.getElementById('traveler-container');
-        const timeMachineImage = document.getElementById('timeMachineImage');
-        const timeMachineContainer = document.getElementById('time-machine-container');
+        const selectedOption = localStorage.getItem('selectedCreature');
         const background = document.querySelector('.background');
+        const travelerImage = document.getElementById('travelerImage');
+        const timeMachineImage = document.getElementById('timeMachineImage');
+        const travelerContainer = document.getElementById('traveler-container');
+        const timeMachineContainer = document.getElementById('time-machine-container');
 
-        // Set the background image based on the selected creature
-        if (selectedCreature) {
+        // Load background
+        if (selectedBackground) {
             background.style.backgroundImage = `url('${selectedBackground}')`;
-            travelerImage.src = selectedCreatureImage; // Set the time traveler image
+        }
 
-            // Set the position of the traveler and time machine based on selected creature
-            switch (selectedCreature) {
-                case 'Pelagornis':
-                    travelerContainer.style.top = '70%';
-                    travelerContainer.style.left = '40%';
-                    timeMachineContainer.style.bottom = '10%';
-                    timeMachineContainer.style.left = '60%';
-                    break;
-                case 'Dodo':
-                    travelerContainer.style.top = '60%';
-                    travelerContainer.style.left = '50%';
-                    timeMachineContainer.style.bottom = '15%';
-                    timeMachineContainer.style.left = '50%';
-                    break;
-                case 'Dunkleosteus':
-                    travelerContainer.style.top = '50%';
-                    travelerContainer.style.left = '30%';
+        // Load time traveler and time machine images
+        if (selectedOption) {
+            travelerImage.src = `Images/TimeTravelers/${selectedOption}.png`;
+            timeMachineImage.src = `Images/TimeMachines/${selectedOption}.png`;
+
+            // Set positions based on selected option
+            switch (selectedOption) {
+                case 'Option (1)':
+                    travelerContainer.style.top = '80%';
+                    travelerContainer.style.left = '20%';
                     timeMachineContainer.style.bottom = '10%';
                     timeMachineContainer.style.left = '70%';
                     break;
-                case 'Megatherium':
-                    travelerContainer.style.top = '80%';
+                case 'Option (2)':
+                    travelerContainer.style.top = '30%';
                     travelerContainer.style.left = '60%';
-                    timeMachineContainer.style.bottom = '20%';
+                    timeMachineContainer.style.bottom = '15%';
                     timeMachineContainer.style.left = '40%';
+                    break;
+                case 'Option (3)':
+                    travelerContainer.style.top = '50%';
+                    travelerContainer.style.left = '10%';
+                    timeMachineContainer.style.bottom = '20%';
+                    timeMachineContainer.style.left = '80%';
+                    break;
+                case 'Option (4)':
+                    travelerContainer.style.top = '50%';
+                    travelerContainer.style.left = '50%';
+                    travelerContainer.style.transform = 'translateX(-50%)';
+                    timeMachineContainer.style.bottom = '10%';
+                    timeMachineContainer.style.left = '50%';
+                    timeMachineContainer.style.transform = 'translateX(-50%)';
                     break;
                 default:
                     travelerContainer.style.top = '50%';
                     travelerContainer.style.left = '50%';
+                    travelerContainer.style.transform = 'translateX(-50%)';
                     timeMachineContainer.style.bottom = '10%';
                     timeMachineContainer.style.left = '50%';
+                    timeMachineContainer.style.transform = 'translateX(-50%)';
             }
         }
 
-        // Set the time machine image based on the selected creature
-        if (selectedCreature) {
-            timeMachineImage.src = `Images/TimeMachines/${selectedCreature}.png`;
-        }
-
-        // Function to save the selection and load the next page
-        function saveSelection(person) {
-            localStorage.setItem('selectedPerson', person);
-            // You can set additional images or data to use later as needed
-            window.location.href = 'NextPage.html'; // Update to your next page
+        // Save user selection and proceed to the next page
+        function saveSelection(option) {
+            localStorage.setItem('selectedPerson', option);
+            window.location.href = 'FinalPage.html';
         }
     </script>
 </body>
