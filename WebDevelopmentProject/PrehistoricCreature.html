@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,16 +16,16 @@
             <img id="timeMachineImage" src="" alt="Time Machine">
         </div>
         <div class="text-container">
-            <p>So have you seen any cool creatures?</p> <!-- Updated text -->
+            <p>So have you seen any cool creatures?</p>
             <div class="buttons">
-                <button onclick="location.href='PrehistoricCreature.html'">The Pelagornis</button> 
-                <button onclick="location.href='PrehistoricCreature.html'">The Dodo</button> 
-                <button onclick="location.href='PrehistoricCreature.html'">The Dunkleosteus</button> 
-                <button onclick="location.href='PrehistoricCreature.html'">The Megatherium</button> 
+                <button onclick="saveSelection('Pelagornis')">The Pelagornis</button>
+                <button onclick="saveSelection('Dodo')">The Dodo</button>
+                <button onclick="saveSelection('Dunkleosteus')">The Dunkleosteus</button>
+                <button onclick="saveSelection('Megatherium')">The Megatherium</button>
             </div>
         </div>
     </div>
-    <div class="large-text" id="purpose-text"></div> 
+    <div class="large-text" id="purpose-text"></div> <!-- This is the large text -->
 
     <script>
         // Get the selected traveler and time machine options from localStorage
@@ -36,7 +36,6 @@
         const timeMachineImage = document.getElementById('timeMachineImage');
         const timeMachineContainer = document.getElementById('time-machine-container');
         const background = document.querySelector('.background');
-        const purposeText = document.getElementById('purpose-text'); // Large text
 
         // Set the background image based on the selected traveler
         if (traveler) {
@@ -97,10 +96,15 @@
             timeMachineImage.src = `Images/TimeMachines/${timeMachineOption}.png`;
         }
 
-        // Display the purpose text
-        const selectedPurpose = localStorage.getItem('selectedPurpose');
-        if (selectedPurpose) {
-            purposeText.innerText = selectedPurpose;
+        // Function to save the selection and load the next page
+        function saveSelection(creature) {
+            // Save the selected creature and background
+            localStorage.setItem('selectedCreature', creature);
+            localStorage.setItem('selectedBackground', `Images/PrehistoricCreatures/Backgrounds/${creature}.jpg`);
+            localStorage.setItem('selectedCreatureImage', `Images/PrehistoricCreatures/${creature}.png`);
+
+            // Redirect to FamousPerson page
+            window.location.href = 'FamousPerson.html';
         }
     </script>
 </body>
