@@ -96,5 +96,6 @@ body {
     left: 50%; /* Center horizontally */
     transform: translate(-50%, -50%); /* Perfectly center */
     text-align: center;
-    z-index: 10; /* Ensure it sits above other content */
+    z-index: 999; /* Ensure it sits above other content */
+    pointer-events: none; /* Ensures it doesn't interact with other elements */
 }
