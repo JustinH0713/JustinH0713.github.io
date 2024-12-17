@@ -91,11 +91,22 @@ body {
     font-size: 80px; /* Larger text size */
     font-weight: bold;
     color: white;
-    position: fixed; /* Fixed to stay in place while other content moves */
+    position: absolute; /* Position it absolutely within the page */
     top: 50%; /* Center vertically */
     left: 50%; /* Center horizontally */
     transform: translate(-50%, -50%); /* Perfectly center */
     text-align: center;
-    z-index: 999; /* Ensure it sits above other content */
+    z-index: 10; /* Ensure it sits above other content */
     pointer-events: none; /* Ensures it doesn't interact with other elements */
+}
+
+.border-container {
+    width: 80%;
+    padding: 20px;
+    border: 10px solid #fff;
+    margin: 20px auto 0 auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Prevents large text from affecting layout */
 }
