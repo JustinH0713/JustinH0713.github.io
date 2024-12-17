@@ -24,36 +24,37 @@ body {
     width: 80%;
     padding: 20px;
     border: 10px solid #fff;
-    margin: 20px auto 0 auto; /* Keeps the box at the top */
+    margin: 20px auto 0 auto;
     background-color: rgba(0, 0, 0, 0.7);
     text-align: center;
+    position: relative;
 }
 
 .time-traveler {
-    position: absolute; /* Position independent of text box */
-    bottom: 10%; /* Places the traveler near the bottom */
-    left: 50%; /* Centers the traveler horizontally */
-    transform: translateX(-50%); /* Precise centering */
-    max-width: 400px; /* Adjusts image size (make larger or smaller here) */
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 400px;
     height: auto;
 }
 
 .time-traveler img {
-    width: 100%; /* Makes the traveler responsive to the container */
+    width: 100%;
     height: auto;
 }
 
 .time-machine {
-    position: absolute; /* Independent positioning */
-    bottom: 10%; /* Placed lower on the page */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Precise centering */
-    max-width: 500px; /* Adjust size of the time machine */
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 500px;
     height: auto;
 }
 
 .time-machine img {
-    width: 100%; /* Makes the time machine responsive to the container */
+    width: 100%;
     height: auto;
 }
 
@@ -65,14 +66,6 @@ body {
 .text-container p {
     font-size: 24px;
     margin-bottom: 20px;
-}
-
-.large-text {
-    font-size: 40px;
-    font-weight: bold;
-    color: white;
-    margin-top: 20px;
-    text-align: center;
 }
 
 .buttons {
@@ -92,4 +85,16 @@ body {
 
 .buttons button:hover {
     background-color: #555;
+}
+
+.large-text {
+    font-size: 80px; /* Larger text size */
+    font-weight: bold;
+    color: white;
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Perfectly center */
+    text-align: center;
+    z-index: 10; /* Ensure it sits above other content */
 }
