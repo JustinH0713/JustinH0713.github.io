@@ -1,0 +1,26 @@
+body {
+    background-color: #2b2b2b;
+    color: #d7bde2;
+    font-family: 'Palatino Linotype', serif;
+}
+h1 {
+    text-align: center;
+    color: #d7bde2;
+}
+.container {
+    text-align: center;
+    margin-top: 10%;
+}
+.choices a {
+    display: inline-block;
+    background-color: #d7bde2;
+    color: #2b2b2b;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    margin: 10px;
+    transition: 0.3s;
+}
+.choices a:hover {
+    background-color: #c39bd3;
+}
