@@ -41,9 +41,9 @@ body {
 }
 
 .time-traveler img, .time-machine img {
-    width: 100%;
-    height: auto;
-    max-width: 400px; /* Can adjust this max-width to your needs */
+    width: 300px; /* Fixed width */
+    height: auto; /* Maintain aspect ratio */
+    max-width: none; /* Remove max-width restriction */
 }
 
 .time-machine {
