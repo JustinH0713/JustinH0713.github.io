@@ -18,10 +18,10 @@
         <div class="text-container">
             <p>So have you seen any cool creatures?</p>
             <div class="buttons">
-                <button onclick="saveSelection('Pelagornis')">The Pelagornis</button>
-                <button onclick="saveSelection('Dodo')">The Dodo</button>
-                <button onclick="saveSelection('Dunkleosteus')">The Dunkleosteus</button>
-                <button onclick="saveSelection('Megatherium')">The Megatherium</button>
+                <button onclick="saveSelection('Option (1)')">The Pelagornis</button>
+                <button onclick="saveSelection('Option (2)')">The Dodo</button>
+                <button onclick="saveSelection('Option (3)')">The Dunkleosteus</button>
+                <button onclick="saveSelection('Option (4)')">The Megatherium</button>
             </div>
         </div>
     </div>
@@ -46,44 +46,31 @@
                 case 'Option (1)':
                     travelerContainer.style.top = '80%';
                     travelerContainer.style.left = '50%';
-                    break;
-                case 'Option (2)':
-                    travelerContainer.style.top = '30%';
-                    travelerContainer.style.left = '60%';
-                    break;
-                case 'Option (3)':
-                    travelerContainer.style.top = '40%';
-                    travelerContainer.style.left = '20%';
-                    break;
-                case 'Option (4)':
-                    travelerContainer.style.top = '50%';
-                    travelerContainer.style.left = '50%';
-                    break;
-                default:
-                    travelerContainer.style.top = '50%';
-                    travelerContainer.style.left = '50%';
-            }
-
-            // Set the position of the time machine
-            switch (traveler) {
-                case 'Option (1)':
                     timeMachineContainer.style.bottom = '10%';
                     timeMachineContainer.style.left = '10%';
                     break;
                 case 'Option (2)':
+                    travelerContainer.style.top = '30%';
+                    travelerContainer.style.left = '60%';
                     timeMachineContainer.style.bottom = '10%';
                     timeMachineContainer.style.left = '40%';
                     break;
                 case 'Option (3)':
+                    travelerContainer.style.top = '40%';
+                    travelerContainer.style.left = '20%';
                     timeMachineContainer.style.bottom = '10%';
                     timeMachineContainer.style.left = '70%';
                     break;
                 case 'Option (4)':
+                    travelerContainer.style.top = '50%';
+                    travelerContainer.style.left = '50%';
                     timeMachineContainer.style.bottom = '10%';
                     timeMachineContainer.style.left = '50%';
                     timeMachineContainer.style.transform = 'translateX(-50%)';
                     break;
                 default:
+                    travelerContainer.style.top = '50%';
+                    travelerContainer.style.left = '50%';
                     timeMachineContainer.style.bottom = '10%';
                     timeMachineContainer.style.left = '50%';
                     timeMachineContainer.style.transform = 'translateX(-50%)';
@@ -96,13 +83,32 @@
         }
 
         // Function to save the selection and load the next page
-        function saveSelection(creature) {
-            // Save the selected creature and background
+        function saveSelection(option) {
+            let creature;
+
+            // Map Option to Creature Names
+            switch (option) {
+                case 'Option (1)':
+                    creature = 'Pelagornis';
+                    break;
+                case 'Option (2)':
+                    creature = 'Dodo';
+                    break;
+                case 'Option (3)':
+                    creature = 'Dunkleosteus';
+                    break;
+                case 'Option (4)':
+                    creature = 'Megatherium';
+                    break;
+            }
+
+            // Save Option for consistency across pages
+            localStorage.setItem('selectedTraveler', option);
             localStorage.setItem('selectedCreature', creature);
             localStorage.setItem('selectedBackground', `Images/PrehistoricCreatures/Backgrounds/${creature}.jpg`);
             localStorage.setItem('selectedCreatureImage', `Images/PrehistoricCreatures/${creature}.png`);
 
-            // Redirect to FamousPerson page
+            // Redirect to the next page
             window.location.href = 'FamousPerson.html';
         }
     </script>
