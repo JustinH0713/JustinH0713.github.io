@@ -1,0 +1,30 @@
+body {
+    background-color: #000000;
+    color: #ff3333;
+    font-family: 'Impact', sans-serif;
+    text-align: center;
+}
+h1 {
+    font-size: 3rem;
+    margin-top: 15%;
+    color: #ff3333;
+}
+p {
+    font-size: 1.5rem;
+    color: white;
+}
+a {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #ff3333;
+    border: 2px solid #ff3333;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+a:hover {
+    background-color: #ff3333;
+    color: black;
+}
