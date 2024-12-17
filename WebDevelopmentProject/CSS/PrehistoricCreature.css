@@ -79,16 +79,3 @@ body {
 .buttons button:hover {
     background-color: #555;
 }
-
-.large-text {
-    font-size: 80px; /* Larger text size */
-    font-weight: bold;
-    color: white;
-    position: fixed; /* Keep the large text fixed */
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Perfect centering */
-    text-align: center;
-    z-index: 10; /* Ensure it sits above all other elements */
-    pointer-events: none; /* Prevent interaction with the large text */
-}
