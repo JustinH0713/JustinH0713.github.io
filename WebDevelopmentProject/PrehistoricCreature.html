@@ -40,9 +40,10 @@
 
         // Set the background image based on the selected traveler
         if (traveler) {
+            travelerImage.src = `Images/TimeTravelers/${traveler}.png`;
             background.style.backgroundImage = `url('Images/TimeTravelers/Backgrounds/${traveler}.jpg')`;
 
-            // Set the position of the traveler and time machine (same as before)
+            // Set the position of the traveler and time machine (same as Purposes page)
             switch (traveler) {
                 case 'Option (1)':
                     travelerContainer.style.top = '80%';
@@ -65,7 +66,7 @@
                     travelerContainer.style.left = '50%';
             }
 
-            // Set the position of the time machine (same as before)
+            // Set the position of the time machine
             switch (traveler) {
                 case 'Option (1)':
                     timeMachineContainer.style.bottom = '10%';
