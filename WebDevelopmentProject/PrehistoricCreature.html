@@ -8,25 +8,24 @@
 </head>
 <body>
     <div class="background"></div> <!-- Background image -->
-    <div class="border-container">
-        <div class="time-traveler" id="traveler-container">
-            <img id="travelerImage" src="" alt="Time Traveler">
-        </div>
-        <div class="time-machine" id="time-machine-container">
-            <img id="timeMachineImage" src="" alt="Time Machine">
-        </div>
-        <div class="text-container">
-            <p>What is your purpose in all this?</p>
-            <div class="buttons">
-                <button onclick="location.href='PrehistoricCreature.html'">World Domination</button>
-                <button onclick="location.href='PrehistoricCreature.html'">Just Bored</button>
-                <button onclick="location.href='PrehistoricCreature.html'">New Friends</button>
-                <button onclick="location.href='PrehistoricCreature.html'">Societal Benefit</button>
-            </div>
+<div class="border-container">
+    <div class="time-traveler" id="traveler-container">
+        <img id="travelerImage" src="" alt="Time Traveler">
+    </div>
+    <div class="time-machine" id="time-machine-container">
+        <img id="timeMachineImage" src="" alt="Time Machine">
+    </div>
+    <div class="text-container">
+        <p>What is your purpose in all this?</p>
+        <div class="buttons">
+            <button onclick="location.href='PrehistoricCreature.html'">World Domination</button>
+            <button onclick="location.href='PrehistoricCreature.html'">Just Bored</button>
+            <button onclick="location.href='PrehistoricCreature.html'">New Friends</button>
+            <button onclick="location.href='PrehistoricCreature.html'">Societal Benefit</button>
         </div>
     </div>
-    <div class="large-text" id="purpose-text"></div> <!-- This is the large text -->
-
+</div>
+<div class="large-text" id="purpose-text"></div> <!-- This is the large text -->
     <script>
         // Get the selected traveler and time machine options from localStorage
         const traveler = localStorage.getItem('selectedTraveler');
