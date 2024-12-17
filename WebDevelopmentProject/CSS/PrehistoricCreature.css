@@ -91,7 +91,7 @@ body {
     font-size: 80px; /* Larger text size */
     font-weight: bold;
     color: white;
-    position: absolute;
+    position: fixed; /* Fixed to stay in place while other content moves */
     top: 50%; /* Center vertically */
     left: 50%; /* Center horizontally */
     transform: translate(-50%, -50%); /* Perfectly center */
