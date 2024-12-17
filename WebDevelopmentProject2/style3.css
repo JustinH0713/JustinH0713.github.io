@@ -1,0 +1,24 @@
+body {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    font-family: 'Courier New', Courier, monospace;
+}
+.container {
+    text-align: center;
+    margin: 15% auto;
+}
+h1 {
+    color: #b22222;
+}
+.choices a {
+    display: inline-block;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    margin: 5px;
+    border-radius: 4px;
+}
+.choices a:hover {
+    background-color: #b22222;
+}
