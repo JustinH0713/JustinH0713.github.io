@@ -1,0 +1,27 @@
+body {
+    background-color: #212f3d;
+    color: #f5b041;
+    font-family: 'Tahoma', sans-serif;
+}
+h1 {
+    color: #f5b041;
+    text-align: center;
+}
+.container {
+    margin-top: 10%;
+    text-align: center;
+}
+.choices a {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 25px;
+    background-color: #f5b041;
+    color: #212f3d;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.choices a:hover {
+    background-color: #f39c12;
+}
+
