@@ -1,0 +1,26 @@
+body {
+    background-color: #2d3436;
+    color: #00cec9;
+    font-family: 'Lucida Console', monospace;
+}
+h1 {
+    color: #00cec9;
+    text-align: center;
+}
+.container {
+    text-align: center;
+    margin-top: 12%;
+}
+.choices a {
+    background-color: #00cec9;
+    color: #2d3436;
+    padding: 10px 20px;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 4px;
+    margin: 10px;
+    transition: 0.3s;
+}
+.choices a:hover {
+    background-color: #00b894;
+}
