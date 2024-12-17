@@ -33,17 +33,22 @@ body {
 }
 
 .time-traveler, .time-machine {
-    position: fixed; /* Make both time-travelers and time-machines fixed so they are not affected by the page's content */
-    bottom: 10%; /* Keep them at the bottom of the screen */
+    position: fixed; /* Fixed to the screen, independent of other content */
+    bottom: 10%; /* Keep them fixed to the bottom */
     left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Center them */
-    z-index: 2; /* Ensure they're above everything else */
+    transform: translateX(-50%); /* Center alignment */
+    z-index: 2; /* Ensures they stay above background and other content */
 }
 
 .time-traveler img, .time-machine img {
     width: 100%;
     height: auto;
-    max-width: 400px; /* Can adjust max width based on your needs */
+    max-width: 400px; /* Can adjust this max-width to your needs */
+}
+
+.time-machine {
+    bottom: 10%; /* Adjust time machine's bottom margin */
+    z-index: 3; /* Ensure time machine is also above the background and other content */
 }
 
 .text-container {
@@ -79,11 +84,11 @@ body {
     font-size: 80px; /* Larger text size */
     font-weight: bold;
     color: white;
-    position: fixed; /* Fixed to stay in place while other content moves */
+    position: fixed; /* Keep the large text fixed */
     top: 50%; /* Center vertically */
     left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Perfectly center */
+    transform: translate(-50%, -50%); /* Perfect centering */
     text-align: center;
-    z-index: 10; /* Ensure it sits above other content */
-    pointer-events: none; /* Ensures it doesn't interact with other elements */
+    z-index: 10; /* Ensure it sits above all other elements */
+    pointer-events: none; /* Prevent interaction with the large text */
 }
