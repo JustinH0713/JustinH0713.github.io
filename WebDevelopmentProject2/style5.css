@@ -1,19 +1,26 @@
 body {
-    background-color: #181818;
-    color: #f0f0f0;
-    font-family: Tahoma, sans-serif;
-    text-align: center;
+    background-color: #2e4053;
+    color: #d5dbdb;
+    font-family: 'Courier New', monospace;
 }
 h1 {
-    color: #4caf50;
+    color: #f7dc6f;
+    text-align: center;
 }
-a {
+.container {
+    text-align: center;
+    margin-top: 15%;
+}
+.choices a {
     display: inline-block;
-    margin-top: 20px;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #f7dc6f;
+    color: #2e4053;
     text-decoration: none;
-    color: #4caf50;
-    font-size: 1.2rem;
+    border-radius: 5px;
+    transition: 0.3s ease;
 }
-a:hover {
-    text-decoration: underline;
+.choices a:hover {
+    background-color: #f4d03f;
 }
